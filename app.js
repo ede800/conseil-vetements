@@ -57,7 +57,27 @@ function verdict(m) {
 
 // ---------- Utilitaires d'affichage ----------
 function setActiveNav(name) {
-  document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("active", a.dataset.nav === name));
+  document.querySelectorAll("[data-nav]").forEach((a) => {
+    const on = a.dataset.nav === name;
+    a.classList.toggle("active", on);
+    if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+  });
+}
+
+// Message lu par les lecteurs d'écran (zone role="status")
+function annoncer(msg) {
+  const zone = document.getElementById("annonce");
+  zone.textContent = "";
+  setTimeout(() => { zone.textContent = msg; }, 50);
+}
+const pluriel = (n, mot) => `${n} ${mot}${n > 1 ? "s" : ""}`;
+
+// Boutons de filtre : état actif visible et annoncé
+function activerChip(groupe, chip) {
+  groupe.forEach((x) => {
+    x.classList.toggle("active", x === chip);
+    x.setAttribute("aria-pressed", x === chip);
+  });
 }
 
 const observer = "IntersectionObserver" in window
@@ -77,7 +97,7 @@ function sectionHead(label, titre) {
     <div class="section-head reveal">
       <div class="label">${label}</div>
       <h2>${titre}</h2>
-      <span class="ornament"></span>
+      <span class="ornament" aria-hidden="true"></span>
     </div>`;
 }
 
@@ -96,12 +116,12 @@ function blocSources(cles, titre = "Sources") {
   return `
     <section class="sources">
       <div class="container">
-        <div class="label">${titre}</div>
+        <h2 class="label">${titre}</h2>
         <ol>
           ${uniques.map((k) => {
             const [t, url] = SOURCES[k];
             const domaine = new URL(url).hostname.replace(/^www\./, "");
-            return `<li><a href="${url}" target="_blank" rel="noopener">${esc(t)}</a> <span>${domaine}</span></li>`;
+            return `<li><a href="${url}" target="_blank" rel="noopener"${url.includes("en.wikipedia") ? ' hreflang="en"' : ""}>${esc(t)}<span class="sr-only"> (nouvel onglet)</span></a> <span>${domaine}</span></li>`;
           }).join("")}
         </ol>
         <p class="sources-note">Les classements de marques sont une synthèse éditoriale fondée sur ces sources, les retours de communautés spécialisées et l'examen des compositions et méthodes de fabrication. Voir <a href="#/methode">notre méthode</a>.</p>
@@ -146,18 +166,19 @@ function renderHome() {
     <section class="section" id="pieces">
       <div class="container">
         ${sectionHead("La collection", "Les <em>pièces</em>")}
-        <div class="filters reveal" id="fam-filters">
-          <button class="chip active" data-fam="">Toutes</button>
-          ${FAMILLES.map((f) => `<button class="chip" data-fam="${f.id}">${f.nom}</button>`).join("")}
+        <div class="filters reveal" id="fam-filters" role="group" aria-label="Filtrer par famille">
+          <button class="chip active" aria-pressed="true" data-fam="">Toutes</button>
+          ${FAMILLES.map((f) => `<button class="chip" aria-pressed="false" data-fam="${f.id}">${f.nom}</button>`).join("")}
         </div>
         <div class="search-wrap reveal">
-          <input class="search" type="search" placeholder="Rechercher une pièce" aria-label="Rechercher une pièce">
+          <label class="sr-only" for="q-pieces">Rechercher une pièce</label><input class="search" id="q-pieces" type="search" placeholder="Rechercher une pièce">
         </div>
         <div id="index"></div>
       </div>
     </section>
 
-    <section class="trio">
+    <section class="trio" aria-labelledby="titre-trio">
+      <h2 id="titre-trio" class="sr-only">Explorer le guide</h2>
       <a class="duo-card reveal" href="#/matieres">
         <div class="label">Le guide</div>
         <h3>Les <em>matières</em></h3>
@@ -182,7 +203,7 @@ function renderHome() {
   const index = document.getElementById("index");
   let fam = "";
   let q = "";
-  const draw = () => {
+  const draw = (annonce = false) => {
     const n = q.trim().toLowerCase();
     const groupes = FAMILLES.filter((f) => !fam || f.id === fam).map((f) => ({
       f,
@@ -206,17 +227,22 @@ function renderHome() {
             </ul>
           </div>`).join("")
       : `<p class="empty">Aucune pièce ne correspond à votre recherche.</p>`;
+    if (annonce) annoncer(pluriel(groupes.reduce((t, g) => t + g.items.length, 0), "pièce") + " affichée(s)");
     reveal(index);
   };
   draw();
-  app.querySelector(".search").addEventListener("input", (e) => { q = e.target.value; draw(); });
+  app.querySelector(".search").addEventListener("input", (e) => { q = e.target.value; draw(true); });
   document.querySelectorAll("#fam-filters .chip").forEach((c) => c.addEventListener("click", () => {
-    document.querySelectorAll("#fam-filters .chip").forEach((x) => x.classList.toggle("active", x === c));
+    activerChip(document.querySelectorAll("#fam-filters .chip"), c);
     fam = c.dataset.fam;
-    draw();
+    draw(true);
   }));
-  document.getElementById("to-pieces").addEventListener("click", () =>
-    document.getElementById("pieces").scrollIntoView({ behavior: "smooth" }));
+  document.getElementById("to-pieces").addEventListener("click", () => {
+    const h = document.querySelector("#pieces h2");
+    h.setAttribute("tabindex", "-1");
+    h.focus({ preventScroll: true });
+    document.getElementById("pieces").scrollIntoView({ behavior: "smooth" });
+  });
   reveal();
 }
 
@@ -233,7 +259,7 @@ function renderVetement(id, onglet = "matieres") {
   document.title = `${v.nom} — Bien Vêtu`;
 
   app.innerHTML = `
-    <div class="crumbs label"><a href="#/">Les pièces</a> &nbsp;/&nbsp; ${famille(v.famille).nom} &nbsp;/&nbsp; ${esc(v.nom)}</div>
+    <nav class="crumbs label" aria-label="Fil d'Ariane"><a href="#/">Les pièces</a> <span aria-hidden="true">&nbsp;/&nbsp;</span> ${famille(v.famille).nom} <span aria-hidden="true">&nbsp;/&nbsp;</span> <span aria-current="page">${esc(v.nom)}</span></nav>
     ${pageHead(`${famille(v.famille).nom} · Pièce N° ${num(idx)}`, esc(v.nom), esc(v.resume))}
     <section class="essentiel-wrap">
       <div class="narrow">
@@ -244,15 +270,15 @@ function renderVetement(id, onglet = "matieres") {
         </div>
       </div>
     </section>
-    <div class="tabs" role="tablist">
-      <button class="tab" data-tab="matieres" role="tab"><span class="roman">I.</span>Les matières</button>
-      <button class="tab" data-tab="marques" role="tab"><span class="roman">II.</span>Les maisons</button>
+    <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel"><span class="roman" aria-hidden="true">I.</span>Les matières</button>
+      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel"><span class="roman" aria-hidden="true">II.</span>Les maisons</button>
     </div>
-    <section class="section"><div class="container" id="panel"></div></section>
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0"></div></section>
     ${blocSources([...v.sources, ...SOURCES_MARQUES])}
-    <nav class="piece-nav">
-      <a href="#/vetement/${prev.id}"><span class="label">← Pièce précédente</span><span class="pn-name">${esc(prev.nom)}</span></a>
-      <a href="#/vetement/${next.id}"><span class="label">Pièce suivante →</span><span class="pn-name">${esc(next.nom)}</span></a>
+    <nav class="piece-nav" aria-label="Pièces voisines">
+      <a href="#/vetement/${prev.id}"><span class="label"><span aria-hidden="true">← </span>Pièce précédente</span><span class="pn-name">${esc(prev.nom)}</span></a>
+      <a href="#/vetement/${next.id}"><span class="label">Pièce suivante<span aria-hidden="true"> →</span></span><span class="pn-name">${esc(next.nom)}</span></a>
     </nav>
   `;
 
@@ -292,7 +318,7 @@ function renderVetement(id, onglet = "matieres") {
     const m = MARQUES[cle];
     return `
       <a class="house" href="#/maison/${slug(cle)}">
-        <div class="house-meta"><span>${esc(m.pays)}</span><span>${fmt(m.moyenne)} / 5</span></div>
+        <div class="house-meta"><span>${esc(m.pays)}</span><span><span class="sr-only">note globale </span>${fmt(m.moyenne)}<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
         <h4>${esc(nom)} <span class="go" aria-hidden="true">→</span></h4>
         <p>${esc(note)}</p>
       </a>`;
@@ -315,9 +341,9 @@ function renderVetement(id, onglet = "matieres") {
           ${["S", "A", "B", "C"].filter((t) => tiers[t]?.length).map((t) => `
             <div class="tier tier-${t} reveal">
               <div class="tier-mark">
-                <span class="tier-letter">${t}</span>
+                <span class="tier-letter" aria-hidden="true">${t}</span>
                 <div>
-                  <div class="tier-title">${TIER_NOMS[t]}</div>
+                  <h3 class="tier-title"><span class="sr-only">Rang ${t} : </span>${TIER_NOMS[t]}</h3>
                   <div class="tier-sub">${TIER_INFO[t]}</div>
                 </div>
               </div>
@@ -326,20 +352,38 @@ function renderVetement(id, onglet = "matieres") {
         </div>
       </div>`;
     panel.querySelectorAll(".budget-btn").forEach((btn) =>
-      btn.addEventListener("click", () => { budget = btn.dataset.budget; showMarques(); }));
+      btn.addEventListener("click", () => {
+        budget = btn.dataset.budget;
+        showMarques();
+        panel.querySelector(".budget-btn.active").focus();
+        annoncer("Classement " + BUDGETS.find((b) => b.id === budget).label.toLowerCase() + " affiché");
+      }));
     reveal(panel);
   };
 
+  const onglets = [...app.querySelectorAll(".tab")];
   const select = (t) => {
-    app.querySelectorAll(".tab").forEach((b) => {
+    onglets.forEach((b) => {
       const on = b.dataset.tab === t;
       b.classList.toggle("active", on);
       b.setAttribute("aria-selected", on);
+      b.tabIndex = on ? 0 : -1;
     });
+    panel.setAttribute("aria-labelledby", "tab-" + t);
     t === "marques" ? showMarques() : showMatieres();
   };
 
-  app.querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => select(b.dataset.tab)));
+  onglets.forEach((b, i) => {
+    b.addEventListener("click", () => select(b.dataset.tab));
+    b.addEventListener("keydown", (e) => {
+      const cible = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: onglets.length - 1 }[e.key];
+      if (cible === undefined) return;
+      e.preventDefault();
+      const o = onglets[(cible + onglets.length) % onglets.length];
+      o.focus();
+      select(o.dataset.tab);
+    });
+  });
   select(onglet === "maisons" ? "marques" : "matieres");
   reveal();
 }
@@ -357,14 +401,14 @@ function renderMaison(s) {
   classements.forEach((c) => compte[c.tier]++);
 
   app.innerHTML = `
-    <div class="crumbs label"><a href="#/maisons">Les maisons</a> &nbsp;/&nbsp; ${esc(nom)}</div>
+    <nav class="crumbs label" aria-label="Fil d'Ariane"><a href="#/maisons">Les maisons</a> <span aria-hidden="true">&nbsp;/&nbsp;</span> <span aria-current="page">${esc(nom)}</span></nav>
     ${pageHead(`${esc(m.pays)} · ${GAMMES[m.gamme]}`, esc(nom), esc(m.desc))}
 
     <section class="section brand-score-wrap" style="padding-top:0">
       <div class="container brand-grid">
         <div class="score-card reveal">
           <div class="label">Note globale</div>
-          <div class="score-big">${fmt(m.moyenne)}<small>/ 5</small></div>
+          <div class="score-big"><span aria-hidden="true">${fmt(m.moyenne)}<small>/ 5</small></span><span class="sr-only">${fmt(m.moyenne)} sur 5</span></div>
           <div class="score-verdict">${verdict(m.moyenne)}</div>
           <div class="score-meta">
             <div><span class="label">Origine</span>${esc(m.pays)}</div>
@@ -377,7 +421,7 @@ function renderMaison(s) {
             <div class="criterion">
               <div class="crit-text"><strong>${c.nom}</strong><span>${c.aide}</span></div>
               ${jauge(m.notes[i])}
-              <span class="crit-val">${m.notes[i]}/5</span>
+              <span class="crit-val"><span aria-hidden="true">${m.notes[i]}/5</span><span class="sr-only">${m.notes[i]} sur 5</span></span>
             </div>`).join("")}
         </div>
       </div>
@@ -387,12 +431,12 @@ function renderMaison(s) {
       <div class="container notes notes-dark">
         <div class="note-block tips reveal">
           <div class="label">Ce que nous apprécions</div>
-          <h3>Points forts</h3>
+          <h2>Points forts</h2>
           <ul><li>${esc(m.forts)}</li></ul>
         </div>
         <div class="note-block avoid reveal">
           <div class="label">Ce qui nous retient</div>
-          <h3>Points faibles</h3>
+          <h2>Points faibles</h2>
           <ul><li>${esc(m.faibles)}</li></ul>
         </div>
       </div>
@@ -402,12 +446,12 @@ function renderMaison(s) {
       <div class="container">
         ${sectionHead("Dans nos classements", `Présente dans <em>${classements.length}</em> classement${classements.length > 1 ? "s" : ""}`)}
         <div class="tier-count reveal">
-          ${["S", "A", "B", "C"].map((t) => `<div class="tc tier-${t}"><span class="tier-letter">${t}</span><span>${compte[t]} × ${TIER_NOMS[t]}</span></div>`).join("")}
+          ${["S", "A", "B", "C"].map((t) => `<div class="tc tier-${t}"><span class="tier-letter" aria-hidden="true">${t}</span><span>${compte[t]} <span aria-hidden="true">×</span><span class="sr-only">fois au rang ${t},</span> ${TIER_NOMS[t]}</span></div>`).join("")}
         </div>
         <ul class="rank-list">
           ${classements.map((c) => `
             <li class="rank-row reveal tier-${c.tier}">
-              <span class="tier-letter">${c.tier}</span>
+              <span class="tier-letter"><span class="sr-only">Rang </span>${c.tier}</span>
               <a href="#/vetement/${c.v.id}" class="rank-piece">${esc(c.v.nom)}${c.nom !== nom ? ` <small>(${esc(c.nom.replace(nom, "").replace(/[()]/g, "").trim() || c.nom)})</small>` : ""}</a>
               <span class="rank-budget">${c.budget.label} · ${esc(c.v.budgets[c.budget.id])}</span>
               <span class="rank-note">${esc(c.note)}</span>
@@ -430,13 +474,13 @@ function renderMaisons() {
     ${pageHead("L'annuaire", "Les maisons", `${noms.length} marques évaluées sur cinq critères : qualité des matières, confection, durabilité, rapport qualité-prix, éthique et transparence.`)}
     <section class="section" style="padding-top:0">
       <div class="container">
-        <div class="filters" id="gamme-filters">
-          <button class="chip active" data-g="">Toutes</button>
-          ${Object.entries(GAMMES).map(([g, n]) => `<button class="chip" data-g="${g}">${g} ${n}</button>`).join("")}
+        <div class="filters" id="gamme-filters" role="group" aria-label="Filtrer par gamme de prix">
+          <button class="chip active" aria-pressed="true" data-g="">Toutes</button>
+          ${Object.entries(GAMMES).map(([g, n]) => `<button class="chip" aria-pressed="false" data-g="${g}">${g} ${n}</button>`).join("")}
         </div>
         <div class="dir-tools">
-          <input class="search" type="search" placeholder="Rechercher une maison ou un pays" aria-label="Rechercher une maison">
-          <select class="sort" aria-label="Trier">
+          <label class="sr-only" for="q-maisons">Rechercher une maison ou un pays</label><input class="search" id="q-maisons" type="search" placeholder="Rechercher une maison ou un pays">
+          <label class="sr-only" for="tri-maisons">Trier les maisons</label><select class="sort" id="tri-maisons">
             <option value="az">Ordre alphabétique</option>
             <option value="note">Meilleures notes</option>
           </select>
@@ -454,12 +498,13 @@ function renderMaisons() {
       <a class="dir-item" href="#/maison/${slug(n)}">
         <span class="dir-name">${esc(n)}</span>
         <span class="dir-meta">${esc(m.pays)} · ${m.gamme}</span>
-        <span class="dir-score">${fmt(m.moyenne)}</span>
+        <span class="dir-score"><span class="sr-only">note </span>${fmt(m.moyenne)}<span class="sr-only"> sur 5</span></span>
       </a>`;
   };
-  const draw = () => {
+  const draw = (annonce = false) => {
     const s = q.trim().toLowerCase();
     let liste = noms.filter((n) => (!g || MARQUES[n].gamme === g) && (n + " " + MARQUES[n].pays).toLowerCase().includes(s));
+    if (annonce) annoncer(pluriel(liste.length, "maison") + " affichée(s)");
     if (!liste.length) { dir.innerHTML = `<p class="empty">Aucune maison trouvée.</p>`; return; }
     if (tri === "note") {
       liste = liste.sort((a, b) => MARQUES[b].moyenne - MARQUES[a].moyenne);
@@ -469,30 +514,32 @@ function renderMaisons() {
     const groupes = {};
     liste.forEach((n) => (groupes[lettre(n)] ||= []).push(n));
     dir.innerHTML = `
-      <nav class="letters">${Object.keys(groupes).map((l) => `<a href="#" data-l="${l}">${l}</a>`).join("")}</nav>
+      <nav class="letters" aria-label="Accès par lettre">${Object.keys(groupes).map((l) => `<button type="button" data-l="${l}" aria-label="Lettre ${l === "#" ? "chiffres" : l}">${l}</button>`).join("")}</nav>
       ${Object.entries(groupes).map(([l, ns]) => `
         <div class="dir-letter" id="lettre-${l === "#" ? "num" : l}">
-          <h3>${l}</h3>
+          <h2 class="dir-lettre"><span class="sr-only">Lettre </span>${l === "#" ? "#" : l}</h2>
           <div class="dir-grid">${ns.map(carte).join("")}</div>
         </div>`).join("")}`;
-    dir.querySelectorAll(".letters a").forEach((a) => a.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.getElementById("lettre-" + (a.dataset.l === "#" ? "num" : a.dataset.l)).scrollIntoView({ behavior: "smooth" });
+    dir.querySelectorAll(".letters button").forEach((a) => a.addEventListener("click", () => {
+      const cible = document.getElementById("lettre-" + (a.dataset.l === "#" ? "num" : a.dataset.l)).querySelector("h2");
+      cible.setAttribute("tabindex", "-1");
+      cible.focus({ preventScroll: true });
+      cible.scrollIntoView({ behavior: "smooth" });
     }));
   };
   draw();
-  app.querySelector(".search").addEventListener("input", (e) => { q = e.target.value; draw(); });
-  app.querySelector(".sort").addEventListener("change", (e) => { tri = e.target.value; draw(); });
+  app.querySelector(".search").addEventListener("input", (e) => { q = e.target.value; draw(true); });
+  app.querySelector(".sort").addEventListener("change", (e) => { tri = e.target.value; draw(true); });
   document.querySelectorAll("#gamme-filters .chip").forEach((c) => c.addEventListener("click", () => {
-    document.querySelectorAll("#gamme-filters .chip").forEach((x) => x.classList.toggle("active", x === c));
+    activerChip(document.querySelectorAll("#gamme-filters .chip"), c);
     g = c.dataset.g;
-    draw();
+    draw(true);
   }));
   reveal();
 }
 
 // ---------- Guide des matières ----------
-function renderMatieres() {
+function renderMatieres(cible) {
   setActiveNav("matieres");
   document.title = "Les matières — Bien Vêtu";
   app.innerHTML = `
@@ -502,26 +549,29 @@ function renderMatieres() {
         <div class="legend reveal">
           <p><strong>Végétales et animales</strong> : fibres naturelles (coton, lin, laine…). <strong>Artificielles</strong> : fabriquées à partir de bois ou de cellulose (viscose, lyocell…). <strong>Synthétiques</strong> : issues du pétrole (polyester, nylon…). Les <strong>étoffes</strong> désignent la façon dont le fil est tissé ou tricoté (jersey, denim, flanelle…).</p>
         </div>
-        <div class="filters" id="mat-filters">
-          <button class="chip active" data-f="">Toutes</button>
-          ${FAMILLES_MATIERES.map((f) => `<button class="chip" data-f="${f.id}">${f.nom}</button>`).join("")}
+        <div class="filters" id="mat-filters" role="group" aria-label="Filtrer par famille de matières">
+          <button class="chip active" aria-pressed="true" data-f="">Toutes</button>
+          ${FAMILLES_MATIERES.map((f) => `<button class="chip" aria-pressed="false" data-f="${f.id}">${f.nom}</button>`).join("")}
         </div>
-        <div class="search-wrap"><input class="search" type="search" placeholder="Rechercher une matière" aria-label="Rechercher une matière"></div>
+        <div class="search-wrap"><label class="sr-only" for="q-matieres">Rechercher une matière</label><input class="search" id="q-matieres" type="search" placeholder="Rechercher une matière"></div>
         <div class="fibres" id="fibres"></div>
       </div>
     </section>
     ${blocSources(MATIERES.flatMap((m) => m.sources))}
   `;
   const list = document.getElementById("fibres");
-  let f = "", q = "";
+  const choisie = cible && MATIERES.find((m) => slug(m.nom) === cible);
+  let f = "", q = choisie ? choisie.nom : "";
+  if (choisie) app.querySelector(".search").value = choisie.nom;
   const nomFam = (id) => FAMILLES_MATIERES.find((x) => x.id === id).nom;
-  const draw = () => {
+  const draw = (annonce = false) => {
     const s = q.trim().toLowerCase();
     const liste = MATIERES.filter((m) => (!f || m.famille === f) && (m.nom + " " + m.bref + " " + m.usage).toLowerCase().includes(s));
+    if (annonce) annoncer(pluriel(liste.length, "matière") + " affichée(s)");
     list.innerHTML = liste.length ? liste.map((m) => `
       <article class="fibre reveal">
-        <div class="fibre-top"><span class="label">${nomFam(m.famille)}</span><span class="rating" aria-label="Note ${m.note} sur 5">${jauge(m.note)}</span></div>
-        <h3>${esc(m.nom)}</h3>
+        <div class="fibre-top"><span class="label">${nomFam(m.famille)}</span><span class="rating">${jauge(m.note)}<span class="fibre-note"><span aria-hidden="true">${m.note}/5</span><span class="sr-only">intérêt ${m.note} sur 5</span></span></span></div>
+        <h2 class="fibre-titre">${esc(m.nom)}</h2>
         <p class="fibre-bref">${esc(m.bref)}</p>
         <dl>
           <dt>Qualités</dt><dd>${esc(m.plus)}</dd>
@@ -533,11 +583,11 @@ function renderMatieres() {
     reveal(list);
   };
   draw();
-  app.querySelector(".search").addEventListener("input", (e) => { q = e.target.value; draw(); });
+  app.querySelector(".search").addEventListener("input", (e) => { q = e.target.value; draw(true); });
   document.querySelectorAll("#mat-filters .chip").forEach((c) => c.addEventListener("click", () => {
-    document.querySelectorAll("#mat-filters .chip").forEach((x) => x.classList.toggle("active", x === c));
+    activerChip(document.querySelectorAll("#mat-filters .chip"), c);
     f = c.dataset.f;
-    draw();
+    draw(true);
   }));
   reveal();
 }
@@ -599,7 +649,7 @@ function renderConseils() {
       <div class="narrow">
         ${chapitres.map(([titre, corps], i) => `
           <article class="chapter reveal">
-            <span class="big-num">${ROMAINS[i]}.</span>
+            <span class="big-num" aria-hidden="true">${ROMAINS[i]}.</span>
             <div><h2>${titre}</h2>${corps}</div>
           </article>`).join("")}
       </div>
@@ -631,27 +681,27 @@ function renderMethode() {
     <section class="section" style="padding-top:0">
       <div class="narrow">
         <article class="chapter reveal">
-          <span class="big-num">I.</span>
+          <span class="big-num" aria-hidden="true">I.</span>
           <div><h2>Trois budgets</h2><p>Chaque pièce est classée sur trois niveaux de prix, avec des fourchettes propres à chaque vêtement (un t-shirt et un manteau n'ont pas les mêmes prix). Une maison est comparée uniquement à celles de sa tranche de prix : un « S » en petit budget n'est pas comparable à un « S » en haut de gamme.</p></div>
         </article>
         <article class="chapter reveal">
-          <span class="big-num">II.</span>
+          <span class="big-num" aria-hidden="true">II.</span>
           <div><h2>Quatre rangs</h2><ul>
             ${["S", "A", "B", "C"].map((t) => `<li><strong>${t} — ${TIER_NOMS[t]}</strong> : ${TIER_INFO[t].toLowerCase()}.</li>`).join("")}
           </ul></div>
         </article>
         <article class="chapter reveal">
-          <span class="big-num">III.</span>
+          <span class="big-num" aria-hidden="true">III.</span>
           <div><h2>Cinq critères par maison</h2><ul>
             ${CRITERES.map((c) => `<li><strong>${c.nom}</strong> : ${c.aide.toLowerCase()}.</li>`).join("")}
           </ul><p>Chaque critère est noté sur 5 ; la note globale en est la moyenne. Une maison peut avoir une très bonne note globale et être classée « C » sur une pièce précise si son prix y est injustifié.</p></div>
         </article>
         <article class="chapter reveal">
-          <span class="big-num">IV.</span>
+          <span class="big-num" aria-hidden="true">IV.</span>
           <div><h2>Nos sources</h2><p>Les évaluations synthétisent des sources encyclopédiques sur les fibres et les techniques, les publications des organismes textiles et des labels, les tests de médias spécialisés et l'expérience partagée de communautés de passionnés. Elles constituent un avis éditorial général : la qualité d'une maison peut varier selon les modèles, les usines et les années. Vérifiez toujours la composition de la pièce que vous achetez.</p></div>
         </article>
         <article class="chapter reveal">
-          <span class="big-num">V.</span>
+          <span class="big-num" aria-hidden="true">V.</span>
           <div><h2>Indépendance</h2><p>Bien Vêtu ne perçoit aucune commission et ne contient aucun lien affilié. Les marques citées n'ont ni payé ni été consultées.</p></div>
         </article>
       </div>
@@ -660,6 +710,173 @@ function renderMethode() {
   `;
   reveal();
 }
+
+// ---------- Accessibilité ----------
+function renderAccessibilite() {
+  setActiveNav("");
+  document.title = "Accessibilité — Bien Vêtu";
+  app.innerHTML = `
+    ${pageHead("Engagement", "Accessibilité", "Bien Vêtu vise la conformité au niveau AA des règles WCAG 2.1, sur lesquelles s'appuie le RGAA en France.")}
+    <section class="section" style="padding-top:0">
+      <div class="narrow">
+        <article class="chapter reveal">
+          <span class="big-num" aria-hidden="true">I.</span>
+          <div><h2>Mesures mises en place</h2><ul class="a11y-list">
+            <li>Contrastes de couleurs d'au moins 4,5:1 pour le texte, renforcés si votre système demande un contraste élevé.</li>
+            <li>Navigation complète au clavier, avec un indicateur de focus visible et un lien « Aller au contenu ».</li>
+            <li>Onglets utilisables aux flèches du clavier, filtres et boutons annonçant leur état.</li>
+            <li>Changements de page et résultats de recherche annoncés aux lecteurs d'écran.</li>
+            <li>Structure de titres hiérarchisée, zones de navigation nommées, fil d'Ariane.</li>
+            <li>Notes et jauges accompagnées d'un équivalent textuel.</li>
+            <li>Animations désactivées si votre système demande de réduire les mouvements.</li>
+            <li>Mise en page adaptée aux petits écrans et au zoom jusqu'à 200 %.</li>
+          </ul></div>
+        </article>
+        <article class="chapter reveal">
+          <span class="big-num" aria-hidden="true">II.</span>
+          <div><h2>Limites connues</h2><p>Les liens vers des sources externes mènent à des sites dont nous ne maîtrisons pas l'accessibilité. Certaines sources sont en anglais.</p></div>
+        </article>
+        <article class="chapter reveal">
+          <span class="big-num" aria-hidden="true">III.</span>
+          <div><h2>Signaler un problème</h2><p>Si un contenu ou une fonction vous est inaccessible, signalez-le en ouvrant un ticket sur <a href="https://github.com/ede800/conseil-vetements/issues" target="_blank" rel="noopener">la page du projet sur GitHub<span class="sr-only"> (nouvel onglet)</span></a>. Nous vous proposerons une alternative et corrigerons le problème.</p></div>
+        </article>
+      </div>
+    </section>
+  `;
+  reveal();
+}
+
+// ---------- Recherche globale ----------
+const normaliser = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+const INDEX_RECHERCHE = [
+  ...VETEMENTS.map((v) => ({
+    groupe: "Pièces", titre: v.nom, sous: famille(v.famille).nom + " · " + v.resume, url: "#/vetement/" + v.id,
+    texte: [v.nom, v.resume, ...v.matieres.map((m) => m.nom)].join(" ")
+  })),
+  ...MATIERES.map((m) => ({
+    groupe: "Matières", titre: m.nom, sous: FAMILLES_MATIERES.find((f) => f.id === m.famille).nom + " · " + m.bref, url: "#/matieres/" + slug(m.nom),
+    texte: [m.nom, m.bref, m.usage].join(" ")
+  })),
+  ...Object.keys(MARQUES).map((n) => ({
+    groupe: "Maisons", titre: n, sous: `${MARQUES[n].pays} · ${GAMMES[MARQUES[n].gamme]} · ${fmt(MARQUES[n].moyenne)}/5`, url: "#/maison/" + slug(n),
+    texte: [n, MARQUES[n].pays].join(" ")
+  })),
+  ...LEXIQUE.map(([t, d]) => ({
+    groupe: "Lexique", titre: t, sous: d, url: "#/conseils", texte: t + " " + d
+  }))
+].map((e) => ({ ...e, nTitre: normaliser(e.titre), nTexte: normaliser(e.texte) }));
+
+function chercher(requete) {
+  const mots = normaliser(requete).split(/s+/).filter(Boolean);
+  if (!mots.length) return [];
+  return INDEX_RECHERCHE
+    .filter((e) => mots.every((m) => e.nTexte.includes(m) || e.nTitre.includes(m)))
+    .map((e) => {
+      const q = mots.join(" ");
+      const score = e.nTitre === q ? 0 : e.nTitre.startsWith(q) ? 1 : mots.every((m) => e.nTitre.includes(m)) ? 2 : 3;
+      return { e, score };
+    })
+    .sort((a, b) => a.score - b.score || a.e.titre.localeCompare(b.e.titre, "fr"))
+    .map((r) => r.e);
+}
+
+(function initialiserRecherche() {
+  const dialogue = document.getElementById("recherche");
+  if (!dialogue || !dialogue.showModal) return;
+  const champ = document.getElementById("gs-input");
+  const resultats = document.getElementById("gs-results");
+  const statut = document.getElementById("gs-status");
+  const ordre = ["Pièces", "Matières", "Maisons", "Lexique"];
+  const MAX = 8;
+  let minuterie;
+  let declencheur = null;
+
+  const surligner = (texte, mots) => {
+    let html = esc(texte);
+    const n = normaliser(texte);
+    const zones = [];
+    mots.forEach((m) => { let i = n.indexOf(m); if (i >= 0) zones.push([i, i + m.length]); });
+    if (!zones.length) return html;
+    zones.sort((a, b) => b[0] - a[0]);
+    let brut = texte;
+    zones.forEach(([a, b]) => { brut = brut.slice(0, a) + "" + brut.slice(a, b) + "" + brut.slice(b); });
+    return esc(brut).replace(//g, "<mark>").replace(//g, "</mark>");
+  };
+
+  const afficher = () => {
+    const requete = champ.value.trim();
+    if (!requete) { resultats.innerHTML = ""; statut.textContent = ""; return; }
+    const liste = chercher(requete);
+    const mots = normaliser(requete).split(/s+/).filter(Boolean);
+    if (!liste.length) {
+      resultats.innerHTML = `<p class="gs-empty">Aucun résultat pour « ${esc(requete)} ».</p>`;
+      clearTimeout(minuterie);
+      minuterie = setTimeout(() => { statut.textContent = "Aucun résultat"; }, 400);
+      return;
+    }
+    resultats.innerHTML = ordre.map((g) => {
+      const items = liste.filter((e) => e.groupe === g);
+      if (!items.length) return "";
+      return `
+        <section class="gs-group" aria-labelledby="gs-${slug(g)}">
+          <h3 id="gs-${slug(g)}" class="label">${g} <span>(${items.length})</span></h3>
+          <ul>
+            ${items.slice(0, MAX).map((e) => `
+              <li><a href="${e.url}"><span class="gs-title">${surligner(e.titre, mots)}</span><span class="gs-sub">${esc(e.sous)}</span></a></li>`).join("")}
+          </ul>
+          ${items.length > MAX && g === "Maisons" ? `<a class="gs-more" href="#/maisons">Voir les ${items.length} maisons dans l'annuaire</a>` : ""}
+          ${items.length > MAX && g !== "Maisons" ? `<p class="gs-more">… et ${items.length - MAX} autre(s) : précisez votre recherche.</p>` : ""}
+        </section>`;
+    }).join("");
+    clearTimeout(minuterie);
+    minuterie = setTimeout(() => { statut.textContent = pluriel(liste.length, "résultat"); }, 400);
+  };
+
+  const ouvrir = () => {
+    if (dialogue.open) return;
+    declencheur = document.activeElement;
+    dialogue.showModal();
+    champ.focus();
+    champ.select();
+  };
+
+  document.querySelectorAll(".search-toggle").forEach((b) => b.addEventListener("click", ouvrir));
+  dialogue.querySelector(".gs-close").addEventListener("click", () => dialogue.close());
+  // À la fermeture, le focus revient là où il était (sauf si un résultat a changé de page)
+  dialogue.addEventListener("close", () => {
+    setTimeout(() => {
+      const perdu = !document.activeElement || document.activeElement === document.body || dialogue.contains(document.activeElement);
+      if (perdu && declencheur && document.contains(declencheur)) declencheur.focus();
+    }, 0);
+  });
+  champ.addEventListener("input", afficher);
+  dialogue.querySelectorAll(".gs-hint button").forEach((b) => b.addEventListener("click", () => {
+    champ.value = b.dataset.q;
+    afficher();
+    champ.focus();
+  }));
+  // Un clic sur un résultat ferme la fenêtre ; le changement de page place le focus sur le titre
+  resultats.addEventListener("click", (e) => { if (e.target.closest("a")) dialogue.close(); });
+  // Clic sur le fond assombri : fermeture
+  dialogue.addEventListener("click", (e) => { if (e.target === dialogue) dialogue.close(); });
+  // Entrée dans le champ : ouvre le premier résultat
+  champ.addEventListener("keydown", (e) => {
+    // Échap ferme directement (sinon le champ de recherche se contente de se vider)
+    if (e.key === "Escape") { e.preventDefault(); dialogue.close(); return; }
+    if (e.key !== "Enter") return;
+    const premier = resultats.querySelector("a");
+    if (premier) { e.preventDefault(); dialogue.close(); location.hash = premier.getAttribute("href"); }
+  });
+  // Raccourcis : « / » ou Ctrl+K
+  document.addEventListener("keydown", (e) => {
+    const saisie = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+    if ((e.key === "/" && !saisie) || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k")) {
+      e.preventDefault();
+      ouvrir();
+    }
+  });
+})();
 
 // ---------- Routeur ----------
 function route() {
@@ -672,11 +889,23 @@ function route() {
   if (page === "vetement" && param) renderVetement(param, sous);
   else if (page === "maison" && param) renderMaison(param);
   else if (page === "maisons") renderMaisons();
-  else if (page === "matieres") renderMatieres();
+  else if (page === "matieres") renderMatieres(param);
   else if (page === "conseils") renderConseils();
   else if (page === "methode") renderMethode();
+  else if (page === "accessibilite") renderAccessibilite();
   else renderHome();
 }
 
-window.addEventListener("hashchange", route);
+// Lien d'évitement : place le focus sur le contenu sans modifier l'adresse
+document.querySelector(".skip-link").addEventListener("click", (e) => {
+  e.preventDefault();
+  app.focus();
+});
+
+window.addEventListener("hashchange", () => {
+  route();
+  // Déplace le focus sur le titre de la nouvelle page pour les lecteurs d'écran et le clavier
+  const h1 = app.querySelector("h1");
+  if (h1) { h1.setAttribute("tabindex", "-1"); h1.focus({ preventScroll: true }); }
+});
 route();
