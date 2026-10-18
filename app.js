@@ -48,7 +48,11 @@ function logo(nom, taille = "s") {
   if (largeur) {
     // Une petite icône (32 px) n'est jamais agrandie, pour rester nette
     const classe = largeur < 64 ? " logo-petit" : "";
-    return `<span class="logo-mark logo-${taille}${classe}"><img src="logos/${slug(nom)}.png" alt="${taille === "l" ? "Logo de " + esc(nom) : ""}" loading="lazy" decoding="async" width="${largeur}" height="${largeur}"></span>`;
+    // Grand logo : PNG d'origine ; petits logos des listes : miniature WebP de 64 px
+    const grand = taille === "l";
+    const src = grand ? `logos/${slug(nom)}.png` : `logos/64/${slug(nom)}.webp`;
+    const cote = grand ? largeur : Math.min(largeur, 64);
+    return `<span class="logo-mark logo-${taille}${classe}"><img src="${src}" alt="${grand ? "Logo de " + esc(nom) : ""}" loading="lazy" decoding="async" width="${cote}" height="${cote}"></span>`;
   }
   return `<span class="logo-mark logo-${taille} monogramme" aria-hidden="true">${esc(initiales)}</span>`;
 }
@@ -435,17 +439,43 @@ function renderVetement(id, onglet = "matieres") {
 }
 
 // ---------- Fiche d'une maison ----------
+// Maisons comparables : même gamme d'abord, puis le plus de pièces classées en commun, puis la note
+function comparables(nom, max = 6) {
+  const pieces = new Set(CLASSEMENTS[nom].map((c) => c.v.id));
+  const gamme = MARQUES[nom].gamme;
+  return Object.keys(MARQUES)
+    .filter((n) => n !== nom)
+    .map((n) => ({
+      n,
+      communes: new Set(CLASSEMENTS[n].filter((c) => pieces.has(c.v.id)).map((c) => c.v.id)).size,
+      memeGamme: MARQUES[n].gamme === gamme ? 1 : 0
+    }))
+    .filter((x) => x.communes > 0)
+    .sort((a, b) => (b.memeGamme - a.memeGamme) || (b.communes - a.communes) || (MARQUES[b.n].moyenne - MARQUES[a.n].moyenne))
+    .slice(0, max)
+    .map((x) => x.n);
+}
+
 function renderMaison(s) {
   const nom = SLUGS[s];
   if (!nom) return renderMaisons();
   const m = MARQUES[nom];
   const inf = INFOS[nom] || {};
+  const hist = HISTOIRES[nom];
   const classements = CLASSEMENTS[nom];
   setActiveNav("maisons");
-  document.title = `${nom} — Bien Vêtu`;
+  document.title = `${nom} — avis, histoire et classements | Bien Vêtu`;
 
   const compte = { S: 0, A: 0, B: 0, C: 0 };
   classements.forEach((c) => compte[c.tier]++);
+
+  // Pièces pour lesquelles la maison est le plus recommandée (rangs S et A)
+  const forces = [...new Set(classements.filter((c) => c.tier === "S" || c.tier === "A").map((c) => c.v.nom))].slice(0, 3);
+  const enBref = forces.length
+    ? `Particulièrement recommandée pour : ${forces.map(esc).join(", ")}.`
+    : "Rarement recommandée dans nos classements : d'autres maisons offrent mieux pour le même prix.";
+
+  const proches = comparables(nom);
 
   const identite = [
     ["Fondée en", inf.a],
@@ -458,6 +488,14 @@ function renderMaison(s) {
     ["Site officiel", inf.w ? `<a href="https://${inf.w}" target="_blank" rel="noopener">${esc(inf.w)}<span class="sr-only"> (nouvel onglet)</span></a>` : ""]
   ].filter(([, v]) => v);
 
+  const sommaire = [
+    ["note", "Évaluation"],
+    ["identite", "Identité"],
+    ["histoire", "Histoire"],
+    ["classements", "Classements"],
+    proches.length ? ["comparables", "Maisons comparables"] : null
+  ].filter(Boolean);
+
   app.innerHTML = `
     <nav class="crumbs label" aria-label="Fil d'Ariane"><a href="#/maisons">Les maisons</a> <span aria-hidden="true">&nbsp;/&nbsp;</span> <span aria-current="page">${esc(nom)}</span></nav>
     <header class="piece-head brand-head">
@@ -465,9 +503,18 @@ function renderMaison(s) {
       <div class="label reveal">${esc(m.pays)} · ${GAMMES[m.gamme]}${inf.a ? " · depuis " + inf.a : ""}</div>
       <h1 class="reveal">${esc(nom)}</h1>
       <p class="reveal">${esc(m.desc)}</p>
+      <div class="en-bref reveal">
+        <span class="label">En bref</span>
+        <strong>${verdict(m.moyenne)} · ${fmt(m.moyenne)}<span aria-hidden="true">/5</span><span class="sr-only"> sur 5</span></strong>
+        <span>${enBref}</span>
+      </div>
     </header>
 
-    <section class="section brand-score-wrap" style="padding-top:0">
+    <nav class="sommaire" aria-label="Sommaire de la page">
+      ${sommaire.map(([id, t]) => `<button type="button" data-cible="${id}">${t}</button>`).join("")}
+    </nav>
+
+    <section class="section brand-score-wrap" id="note" aria-labelledby="titre-note">
       <div class="container brand-grid">
         <div class="score-card reveal">
           <div class="label">Note globale</div>
@@ -476,7 +523,7 @@ function renderMaison(s) {
           <p class="score-hint">Moyenne des cinq critères ci-contre.</p>
         </div>
         <div class="criteria reveal">
-          <h2 class="label">Évaluation détaillée</h2>
+          <h2 class="label" id="titre-note" tabindex="-1">Évaluation détaillée</h2>
           ${CRITERES.map((c, i) => `
             <div class="criterion">
               <div class="crit-text"><strong>${c.nom}</strong><span>${c.aide}</span></div>
@@ -492,19 +539,30 @@ function renderMaison(s) {
       </div>
     </section>
 
-    <section class="section brand-story">
+    <section class="section brand-story" id="identite" aria-labelledby="titre-identite">
       <div class="container brand-info-grid">
         <div class="reveal">
-          <h2 class="label">Carte d'identité</h2>
+          <h2 class="label" id="titre-identite" tabindex="-1">Carte d'identité</h2>
           <dl class="identity">
             ${identite.map(([k, v]) => `<div><dt>${k}</dt><dd>${k === "Site officiel" ? v : esc(String(v))}</dd></div>`).join("")}
           </dl>
         </div>
         <div class="brand-texts">
-          ${inf.h ? `<article class="reveal"><h2 class="label">Son histoire</h2><p class="story">${esc(inf.h)}</p></article>` : ""}
           ${inf.q ? `<article class="reveal"><h2 class="label">Qualité des produits</h2><p>${esc(inf.q)}</p></article>` : ""}
           ${inf.c ? `<article class="reveal tip-box"><h2 class="label">Le conseil d'achat</h2><p>${esc(inf.c)}</p></article>` : ""}
         </div>
+      </div>
+    </section>
+
+    <section class="section histoire" id="histoire" aria-labelledby="titre-histoire">
+      <div class="narrow">
+        ${sectionHead("Depuis les origines", `<span id="titre-histoire" tabindex="-1">Son <em>histoire</em></span>`)}
+        <p class="story reveal">${esc(hist ? hist.recit : (inf.h || m.desc))}</p>
+        ${hist && hist.dates.length ? `
+          <h3 class="label timeline-title reveal">Dates clés</h3>
+          <ol class="timeline">
+            ${hist.dates.map(([annee, evenement]) => `<li class="reveal"><span class="year">${annee}</span><span class="event">${esc(evenement)}</span></li>`).join("")}
+          </ol>` : ""}
       </div>
     </section>
 
@@ -523,9 +581,9 @@ function renderMaison(s) {
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="classements" aria-labelledby="titre-classements">
       <div class="container">
-        ${sectionHead("Dans nos classements", `Présente dans <em>${classements.length}</em> classement${classements.length > 1 ? "s" : ""}`)}
+        ${sectionHead("Dans nos classements", `<span id="titre-classements" tabindex="-1">Présente dans <em>${classements.length}</em> classement${classements.length > 1 ? "s" : ""}</span>`)}
         <div class="tier-count reveal">
           ${["S", "A", "B", "C"].map((t) => `<div class="tc tier-${t}"><span class="tier-letter" aria-hidden="true">${t}</span><span>${compte[t]} <span aria-hidden="true">×</span><span class="sr-only">fois au rang ${t},</span> ${TIER_NOMS[t]}</span></div>`).join("")}
         </div>
@@ -540,8 +598,34 @@ function renderMaison(s) {
         </ul>
       </div>
     </section>
+
+    ${proches.length ? `
+      <section class="section comparables" id="comparables" aria-labelledby="titre-comparables">
+        <div class="container">
+          ${sectionHead("Pour comparer", `<span id="titre-comparables" tabindex="-1">Maisons <em>comparables</em></span>`)}
+          <ul class="compare-grid">
+            ${proches.map((n) => `
+              <li class="reveal">
+                <a class="compare-card" href="#/maison/${slug(n)}">
+                  ${logo(n)}
+                  <span class="compare-name">${esc(n)}</span>
+                  <span class="compare-meta">${esc(MARQUES[n].pays)} · ${MARQUES[n].gamme}</span>
+                  <span class="compare-score"><span class="sr-only">note </span>${fmt(MARQUES[n].moyenne)}<span class="sr-only"> sur 5</span></span>
+                </a>
+              </li>`).join("")}
+          </ul>
+        </div>
+      </section>` : ""}
     ${blocSources(SOURCES_MARQUES)}
   `;
+
+  // Sommaire : défilement vers la section sans toucher à l'adresse (le routage utilise le #)
+  app.querySelectorAll(".sommaire button").forEach((b) => b.addEventListener("click", () => {
+    const section = document.getElementById(b.dataset.cible);
+    const titre = section.querySelector("[tabindex='-1']");
+    section.scrollIntoView({ behavior: "smooth" });
+    if (titre) titre.focus({ preventScroll: true });
+  }));
   reveal();
 }
 
@@ -1074,7 +1158,8 @@ function chercher(requete) {
 
 // ---------- Routeur ----------
 function route() {
-  const parts = location.hash.replace(/^#\/?/, "").split("/");
+  // Sur une page pré-générée (ex. /maison/paraboot/), la route vient de window.PRERENDU
+  const parts = (location.hash || window.PRERENDU || "").replace(/^#\/?/, "").split("/");
   window.scrollTo(0, 0);
   app.style.animation = "none";
   void app.offsetWidth;

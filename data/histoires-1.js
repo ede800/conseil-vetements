@@ -1,0 +1,151 @@
+// Histoires détaillées des maisons : récit développé et dates clés.
+// Seules les maisons dont l'histoire est bien documentée ont une fiche ; les autres gardent l'historique court d'INFOS.
+
+const HISTOIRES = {};
+const H = (nom, recit, dates) => { HISTOIRES[nom] = { recit, dates }; };
+
+// ---------- Sport et sneakers ----------
+H("Adidas",
+  "L'histoire d'Adidas commence dans la buanderie de la mère des frères Dassler, à Herzogenaurach, en Bavière. Adolf (« Adi ») et Rudolf fabriquent ensemble des chaussures de sport dans les années 1920 et chaussent Jesse Owens aux Jeux de Berlin en 1936. Après la guerre, les deux frères se brouillent et se séparent : Rudolf crée Puma de l'autre côté de la rivière, Adi fonde Adidas, contraction de son surnom et de son nom. Les trois bandes, d'abord simple renfort latéral, deviennent l'un des logos les plus connus au monde. Adidas s'impose dans le football, puis dans la culture populaire avec la Superstar adoptée par Run-DMC et la Stan Smith, plus gros succès commercial de l'histoire de la marque.",
+  [[1924, "Les frères Dassler fondent la Gebrüder Dassler Schuhfabrik"], [1936, "Jesse Owens remporte quatre médailles d'or en chaussures Dassler"], [1949, "Adi Dassler fonde Adidas après la séparation avec son frère"], [1954, "L'Allemagne gagne la Coupe du monde avec des crampons vissés Adidas"], [1971, "La chaussure de tennis Haillet devient la Stan Smith"], [1986, "Run-DMC enregistre « My Adidas »"]]);
+H("Nike",
+  "Phil Knight, coureur à l'université de l'Oregon, et son entraîneur Bill Bowerman fondent Blue Ribbon Sports en 1964 pour importer des chaussures japonaises Onitsuka Tiger. Bowerman bricole lui-même des semelles, dont la célèbre semelle « gaufrée » coulée dans le gaufrier familial. En 1971, la société lance sa propre marque, Nike, du nom de la déesse grecque de la victoire, avec le swoosh dessiné par l'étudiante Carolyn Davidson pour 35 dollars. Le contrat signé avec Michael Jordan en 1984 crée la ligne Air Jordan et transforme la chaussure de sport en objet culturel. Aujourd'hui leader mondial, Nike a aussi été au cœur des polémiques sur les conditions de travail de ses sous-traitants dans les années 1990.",
+  [[1964, "Création de Blue Ribbon Sports"], [1971, "Naissance de la marque Nike et du swoosh"], [1982, "Lancement de l'Air Force 1"], [1985, "Première Air Jordan"], [1987, "L'Air Max 1 rend la bulle d'air visible"], [2017, "La Vaporfly révolutionne la course sur route avec sa plaque carbone"]]);
+H("Puma",
+  "Rudolf Dassler fonde Puma en 1948 après sa rupture avec son frère Adi, créateur d'Adidas. La rivalité entre les deux usines divise la petite ville d'Herzogenaurach pendant des décennies, au point qu'on parlait de « la ville des cous tordus », chacun regardant les chaussures des autres. Puma chausse Pelé lors de la Coupe du monde 1970 et popularise la Suede, adoptée par les danseurs de breakdance new-yorkais. Les deux familles ne se sont symboliquement réconciliées qu'en 2009, lors d'un match de football amical.",
+  [[1948, "Rudolf Dassler fonde Puma"], [1968, "Lancement de la Suede"], [1970, "Pelé joue la Coupe du monde en Puma"], [2009, "Match de réconciliation symbolique entre les employés de Puma et d'Adidas"]]);
+H("New Balance",
+  "New Balance naît en 1906 à Boston sous le nom de New Balance Arch Support Company : William Riley fabrique des supports de voûte plantaire inspirés de la façon dont les poulets tiennent en équilibre. L'entreprise se tourne vers les chaussures de course dans les années 1960, puis est rachetée en 1972 par Jim Davis, qui en est toujours propriétaire. Contrairement à la plupart des grandes marques, New Balance a gardé des usines aux États-Unis et en Angleterre (Flimby), d'où sortent les modèles « Made in USA » et « Made in UK ». Le refus historique de payer des stars et le style « dad shoes » sont devenus, ironiquement, des arguments de mode.",
+  [[1906, "William Riley fonde la New Balance Arch Support Company"], [1960, "Lancement de la Trackster, chaussure de course à largeurs multiples"], [1972, "Jim Davis rachète l'entreprise"], [1982, "Sortie de la 990, première chaussure de course à 100 dollars"], [1982, "Ouverture de l'usine anglaise de Flimby"]]);
+H("Converse",
+  "Marquis Mills Converse fonde la Converse Rubber Shoe Company en 1908 dans le Massachusetts, d'abord pour fabriquer des bottes en caoutchouc. En 1917, l'entreprise lance une chaussure de basket en toile, l'All Star. Un joueur, Chuck Taylor, rejoint l'équipe commerciale et sillonne les États-Unis pour organiser des stages de basket : son nom est ajouté sur l'écusson en 1932. La Chuck Taylor domine les terrains jusqu'aux années 1970, avant de devenir la chaussure des punks, des skateurs et du rock. Converse, en faillite en 2001, a été rachetée par Nike en 2003.",
+  [[1908, "Fondation de la Converse Rubber Shoe Company"], [1917, "Lancement de l'All Star"], [1932, "Le nom de Chuck Taylor apparaît sur l'écusson"], [2001, "Faillite et fermeture de l'usine américaine"], [2003, "Rachat par Nike"]]);
+H("Vans",
+  "Paul Van Doren et ses associés ouvrent en 1966 la Van Doren Rubber Company à Anaheim, en Californie, qui fabrique et vend ses chaussures directement aux clients. La semelle « waffle », très adhérente, séduit les skateurs de Venice Beach, qui en font leur chaussure fétiche. Le damier de la Slip-On, popularisé par le film Fast Times at Ridgemont High en 1982, et la bande latérale « jazz stripe » de l'Old Skool deviennent des signes de reconnaissance. Vans appartient au groupe VF Corporation depuis 2004.",
+  [[1966, "Ouverture du premier magasin à Anaheim"], [1977, "Lancement de l'Old Skool et de sa bande latérale"], [1982, "La Slip-On à damier apparaît au cinéma"], [2004, "Rachat par VF Corporation"]]);
+H("Reebok",
+  "Reebok descend de J.W. Foster and Sons, fondée à Bolton en Angleterre, qui fabriquait à la fin du XIXe siècle les premières chaussures d'athlétisme à pointes. En 1958, deux petits-fils du fondateur créent Reebok, du nom afrikaans d'une antilope. La marque explose dans les années 1980 en devenant la première à créer une chaussure pour l'aérobic féminin, la Freestyle. Rachetée par Adidas en 2005, elle a été revendue en 2022 au groupe Authentic Brands.",
+  [[1895, "Joseph William Foster fabrique des chaussures à pointes"], [1958, "Création de Reebok"], [1982, "La Freestyle, première chaussure d'aérobic"], [2005, "Rachat par Adidas"], [2022, "Revente à Authentic Brands Group"]]);
+H("Asics",
+  "Kihachiro Onitsuka fonde en 1949 à Kobe une entreprise de chaussures de sport pour redonner aux jeunes Japonais le goût de l'effort après la guerre. Ses chaussures Onitsuka Tiger équipent les marathoniens et sont importées aux États-Unis par… les futurs fondateurs de Nike. En 1977, la fusion avec deux autres fabricants donne naissance à ASICS, acronyme de la phrase latine « Anima Sana In Corpore Sano ». La marque a développé dès 1986 son système d'amorti en gel, toujours au cœur de ses modèles.",
+  [[1949, "Fondation d'Onitsuka à Kobe"], [1964, "Onitsuka Tiger est distribuée aux États-Unis par Blue Ribbon Sports"], [1977, "Fusion et naissance d'ASICS"], [1986, "Introduction de l'amorti GEL"]]);
+H("Salomon",
+  "François Salomon ouvre en 1947 un petit atelier à Annecy qui fabrique des carres en acier pour skis. L'entreprise invente ensuite des fixations de ski de sécurité qui en font un leader mondial des sports d'hiver. Dans les années 1990, Salomon se lance dans la chaussure de randonnée puis de trail, une discipline qu'elle contribue à populariser. Plus récemment, ses modèles techniques comme la XT-6 sont devenus des objets de mode recherchés à Paris, Londres ou Tokyo.",
+  [[1947, "François Salomon ouvre son atelier à Annecy"], [1992, "Premières chaussures de randonnée"]]);
+H("Lululemon",
+  "Chip Wilson ouvre en 1998 à Vancouver un studio de design qui sert de studio de yoga le soir. Il conçoit des vêtements techniques pensés pour le yoga, à une époque où les femmes pratiquaient en coton ou en vêtements de danse. Le legging devient le produit phare et fait de Lululemon l'inventeur de la tendance « athleisure ». La marque a connu plusieurs polémiques, dont un rappel de leggings jugés trop transparents en 2013.",
+  [[1998, "Ouverture du premier studio à Vancouver"], [2007, "Introduction en Bourse"], [2013, "Rappel de leggings jugés trop transparents"]]);
+H("Patagonia",
+  "Yvon Chouinard, grimpeur californien, forge et vend ses propres pitons d'escalade dès la fin des années 1950. Constatant qu'ils abîment la roche, il les remplace par des coinceurs amovibles, premier geste d'une entreprise qui fera de l'environnement sa raison d'être. Patagonia naît en 1973 pour vendre des vêtements de montagne, popularise la polaire et passe au coton biologique dès 1996. En 2011, sa publicité « N'achetez pas cette veste » invite à consommer moins. En 2022, Chouinard transfère la propriété de l'entreprise à une fiducie et une association : les bénéfices servent désormais à lutter contre le changement climatique.",
+  [[1957, "Yvon Chouinard forge ses premiers pitons"], [1973, "Création de la marque Patagonia"], [1985, "Engagement à reverser 1 % du chiffre d'affaires à l'environnement"], [1996, "Passage à 100 % de coton biologique"], [2011, "Campagne « Don't Buy This Jacket »"], [2022, "L'entreprise est cédée à une fondation pour le climat"]]);
+H("The North Face",
+  "Douglas Tompkins et Kenneth « Hap » Klopp ouvrent en 1966 un magasin d'équipement de montagne à San Francisco, nommé d'après la face nord, la plus froide et la plus difficile d'une montagne. La marque conçoit ses propres tentes (dont la tente dôme), sacs de couchage et doudounes. La Nuptse (1992), du nom d'un sommet himalayen, devient un classique du streetwear new-yorkais. Tompkins, cofondateur d'Esprit, consacrera ensuite sa fortune à protéger des millions d'hectares en Patagonie.",
+  [[1966, "Ouverture du magasin de San Francisco"], [1975, "Première tente dôme géodésique"], [1992, "Lancement de la doudoune Nuptse"], [2000, "Rachat par VF Corporation"]]);
+H("Arc'teryx",
+  "Dave Lane fonde en 1989 près de Vancouver une petite entreprise baptisée Rock Solid, qui fabrique des harnais d'escalade thermoformés. Rebaptisée Arc'teryx en hommage à l'archéoptéryx, premier oiseau à plumes connu, elle se lance dans les vestes en Gore-Tex en 1998 et devient la référence de la technicité. Ses coutures étanchées étroites et ses coupes précises sont copiées dans toute l'industrie. Rachetée par le groupe finlandais Amer Sports, aujourd'hui contrôlé par le chinois Anta, elle est devenue aussi une marque culte en ville.",
+  [[1989, "Création de Rock Solid, qui devient Arc'teryx"], [1998, "Première veste Gore-Tex, l'Alpha SV"], [2009, "Lancement de la ligne urbaine Veilance"], [2019, "Amer Sports passe sous le contrôle d'Anta Sports"]]);
+H("Decathlon",
+  "Michel Leclercq, cousin de la famille Mulliez (Auchan), ouvre en 1976 un grand magasin de sport à Englos, près de Lille, avec l'idée de proposer tous les sports sous un même toit. Dans les années 1990, Decathlon crée ses propres marques par sport (Quechua pour la montagne, Tribord pour la voile, Kalenji pour la course…) et ses propres centres de conception. Cette intégration lui permet de vendre des produits souvent primés à des prix très bas. La tente « 2 Seconds » de Quechua (2005) et le masque de plongée Easybreath, détourné en respirateur pendant la crise du Covid-19, sont devenus emblématiques.",
+  [[1976, "Ouverture du premier magasin à Englos"], [1996, "Création des marques propres par sport"], [2005, "Lancement de la tente 2 Seconds"], [2014, "Lancement du masque Easybreath"]]);
+H("Champion",
+  "Les frères Feinbloom fondent en 1919 à Rochester, dans l'État de New York, la Knickerbocker Knitting Company, qui fournit des sweats aux équipes universitaires. Pour éviter que les sweats rétrécissent en longueur au lavage, Champion invente une technique de tissage dans le sens horizontal : le Reverse Weave, breveté dans les années 1950. Le sweat d'université, porté par les athlètes puis par les étudiants, devient un classique du vestiaire américain.",
+  [[1919, "Fondation de la Knickerbocker Knitting Company"], [1938, "Lancement du Reverse Weave"], [1952, "Brevet du procédé Reverse Weave"], [2024, "Rachat par Authentic Brands Group"]]);
+H("Speedo",
+  "Speedo naît à Sydney en 1914 sous le nom MacRae Knitting Mills, un fabricant de sous-vêtements. Le nom Speedo est adopté en 1928 avec le slogan « Speed on in your Speedos ». La marque invente le maillot de bain de natation ajusté et équipe les nageurs olympiques. En 2008, sa combinaison LZR Racer permet de battre des dizaines de records du monde, avant que ces combinaisons ne soient interdites en 2010.",
+  [[1914, "Fondation de MacRae Knitting Mills à Sydney"], [1928, "Adoption du nom Speedo"], [2008, "La combinaison LZR Racer fait tomber les records"], [2010, "Interdiction des combinaisons intégrales en compétition"]]);
+
+// ---------- Denim et workwear ----------
+H("Levi's",
+  "Levi Strauss, immigré bavarois, ouvre en 1853 à San Francisco un commerce de tissus et de vêtements pour les chercheurs d'or. En 1872, le tailleur Jacob Davis lui propose une idée : renforcer les poches des pantalons de travail avec des rivets en cuivre. Ils déposent le brevet ensemble le 20 mai 1873, date considérée comme la naissance du jean. Le modèle 501 apparaît en 1890 avec son numéro de lot. Porté par les ouvriers puis par les rebelles des années 1950 comme James Dean, le jean Levi's devient un symbole mondial de la culture américaine.",
+  [[1853, "Levi Strauss ouvre son commerce à San Francisco"], [1873, "Brevet du pantalon à rivets avec Jacob Davis"], [1886, "L'étiquette en cuir aux deux chevaux"], [1890, "Le numéro de lot 501 est attribué"], [1936, "Ajout de l'étiquette rouge « Red Tab »"], [1962, "Lancement de la veste Trucker"]]);
+H("Lee",
+  "Henry David Lee fonde en 1889 au Kansas une entreprise de distribution alimentaire, avant de fabriquer des vêtements de travail pour ses employés. Lee invente la combinaison Union-All en 1913, puis le premier jean à braguette zippée en 1926. Le Lee 101, apparu en 1924, est porté par les cow-boys et les acteurs de western. La marque appartient aujourd'hui à Kontoor Brands, comme Wrangler.",
+  [[1889, "H.D. Lee fonde son entreprise au Kansas"], [1913, "Lancement de la combinaison Union-All"], [1924, "Naissance du jean 101"], [1926, "Premier jean à braguette zippée"]]);
+H("Wrangler",
+  "Wrangler naît en 1947 lorsque le fabricant Blue Bell demande au tailleur Rodeo Ben de dessiner un jean pour les cow-boys de rodéo. Le modèle 13MWZ, avec sa couture plate et ses rivets qui ne blessent pas la selle, est testé par des champions de rodéo. Wrangler devient la marque officielle de nombreuses compétitions de rodéo américaines.",
+  [[1947, "Création du jean 13MWZ avec Rodeo Ben"], [1986, "Rachat de Blue Bell par VF Corporation"], [2019, "Wrangler intègre Kontoor Brands"]]);
+H("Carhartt WIP",
+  "Hamilton Carhartt fonde en 1889 à Detroit une entreprise de vêtements de travail pour les cheminots, avec deux machines à coudre. Ses salopettes et vestes en toile « duck » deviennent l'uniforme des ouvriers américains. En 1989, l'entrepreneur suisse Edwin Faeh obtient la licence pour l'Europe et crée Carhartt « Work In Progress », qui adapte les coupes au style urbain. Le bonnet Watch et la Detroit Jacket deviennent des incontournables du hip-hop et du skate.",
+  [[1889, "Hamilton Carhartt fonde son entreprise à Detroit"], [1954, "Lancement de la Detroit Jacket"], [1989, "Création de la licence européenne Work In Progress"]]);
+H("Dickies",
+  "C.N. Williamson et E.E. « Colonel » Dickie fondent à Fort Worth, au Texas, une entreprise de salopettes en 1922. Dickies fournit l'armée américaine pendant la Seconde Guerre mondiale. Son pantalon 874, robuste et bon marché, est adopté par les skateurs et la culture chicano de Los Angeles. La marque appartient à VF Corporation depuis 2017.",
+  [[1922, "Fondation à Fort Worth"], [1967, "Lancement du pantalon de travail 874"], [2017, "Rachat par VF Corporation"]]);
+H("A.P.C.",
+  "Jean Touitou, ancien assistant chez Kenzo et Agnès b., fonde A.P.C. (Atelier de Production et de Création) en 1987. À contre-courant des logos tapageurs des années 1980, il propose des vêtements sobres, sans marque apparente. Le jean brut Petit Standard, sans délavage, devient la porte d'entrée du denim brut pour toute une génération. A.P.C. a multiplié les collaborations (Kanye West, Nike, Carhartt) et lancé un programme de rachat des jeans usés.",
+  [[1987, "Jean Touitou fonde A.P.C."]]);
+H("Nudie Jeans",
+  "Maria Erixon, ancienne designer chez Lee, fonde Nudie Jeans à Göteborg en 2001. La marque se distingue par une démarche éthique : coton 100 % biologique, transparence sur ses fournisseurs et réparations gratuites à vie dans ses « Repair Shops ». Nudie encourage ses clients à porter leurs jeans longtemps et à les faire réparer plutôt qu'à les remplacer.",
+  [[2001, "Création de Nudie Jeans à Göteborg"], [2012, "Passage au coton 100 % biologique"]]);
+H("Diesel",
+  "Renzo Rosso, fils d'agriculteurs de Vénétie, rachète en 1978 une partie d'une société de denim et en prend le contrôle total en 1985. Diesel se fait connaître par des campagnes publicitaires provocantes et décalées signées « For Successful Living ». Le groupe OTB, fondé par Rosso, possède aussi Maison Margiela, Marni et Jil Sander.",
+  [[1978, "Création de Diesel"], [1985, "Renzo Rosso devient seul propriétaire"], [1991, "Campagnes « For Successful Living »"]]);
+
+// ---------- Vestes, manteaux, outdoor ----------
+H("Barbour",
+  "John Barbour, colporteur écossais, ouvre en 1894 une boutique à South Shields, dans le nord-est de l'Angleterre, pour vendre des cirés aux marins, pêcheurs et dockers. La veste en coton ciré devient l'uniforme de la campagne anglaise. Les modèles Bedale (1980), dessiné pour l'équitation, et Beaufort (1983), pour la chasse, sont des classiques. La famille Barbour dirige toujours l'entreprise, qui détient trois Royal Warrants et propose de recirer et réparer les vestes de ses clients.",
+  [[1894, "Ouverture de la boutique de South Shields"], [1936, "La veste de motard International est créée"], [1980, "Lancement de la Bedale"], [1983, "Lancement de la Beaufort"]]);
+H("Burberry",
+  "Thomas Burberry, apprenti drapier de 21 ans, ouvre en 1856 une boutique à Basingstoke. En 1879, il invente la gabardine, un tissu imperméable et respirant qu'il brevète en 1888. Les explorateurs Amundsen et Shackleton portent du Burberry, et la maison dessine pour les officiers de la Première Guerre mondiale un manteau aux épaulettes et anneaux en D : le trench-coat. Le motif à carreaux, apparu en doublure dans les années 1920, est devenu l'emblème de la marque.",
+  [[1856, "Thomas Burberry ouvre sa boutique"], [1879, "Invention de la gabardine"], [1911, "Amundsen atteint le pôle Sud en Burberry"], [1914, "Le trench équipe les officiers britanniques"], [1920, "Apparition du motif à carreaux en doublure"]]);
+H("Mackintosh",
+  "En 1823, le chimiste écossais Charles Macintosh découvre qu'en collant deux toiles de coton avec une solution de caoutchouc, on obtient un tissu totalement imperméable. Les premiers manteaux, encore rigides et malodorants, s'améliorent avec la vulcanisation. Le nom devient si courant que « mac » désigne un imperméable en anglais. La maison, rachetée par le japonais Yagi Tsusho en 2007, fabrique toujours ses manteaux à la main en Écosse.",
+  [[1823, "Charles Macintosh brevète son tissu imperméable"], [1830, "Fusion avec la manufacture de Thomas Hancock"], [2007, "Rachat par le groupe japonais Yagi Tsusho"]]);
+H("Moncler",
+  "René Ramillon et André Vincent fondent Moncler en 1952 à Monestier-de-Clermont, près de Grenoble, pour fabriquer des sacs de couchage et des tentes. Les doudounes, d'abord conçues pour les ouvriers, équipent l'expédition italienne qui réussit la première ascension du K2 en 1954. Dans les années 1980, la doudoune Moncler devient un phénomène de mode chez les jeunes Milanais (les « paninari »). Remo Ruffini, qui rachète la marque en 2003, en fait un groupe de luxe coté en Bourse.",
+  [[1952, "Fondation près de Grenoble"], [1954, "Moncler équipe la première ascension du K2"], [1968, "Fournisseur des Jeux olympiques de Grenoble"], [2003, "Rachat par Remo Ruffini"], [2013, "Introduction en Bourse à Milan"]]);
+H("Canada Goose",
+  "Sam Tick, immigré polonais, fonde en 1957 à Toronto Metro Sportswear, qui fabrique des vêtements de laine et des imperméables. Son gendre lance les parkas en duvet sous le nom Snow Goose, rebaptisé Canada Goose pour l'export. Les parkas équipent des chercheurs en Antarctique, puis deviennent un symbole de statut social dans les villes. La marque a abandonné l'achat de fourrure neuve en 2021 et la fourrure en 2022.",
+  [[1957, "Sam Tick fonde Metro Sportswear"], [1982, "Expédition au mont Everest avec Laurie Skreslet"], [2017, "Introduction en Bourse"], [2022, "Fin de l'utilisation de fourrure"]]);
+H("Fjällräven",
+  "À 14 ans, Åke Nordin fabrique dans le sous-sol familial d'Örnsköldsvik un sac à dos à armature en bois. Il fonde Fjällräven (« renard arctique ») en 1960. La marque crée la toile G-1000, mélange de polyester et de coton imprégnable à la cire, puis en 1978 le sac Kånken, conçu pour soulager le dos des écoliers suédois. Le Kånken est devenu l'un des sacs les plus reconnaissables au monde.",
+  [[1960, "Fondation de Fjällräven"], [1968, "Création de la toile G-1000"], [1978, "Lancement du sac Kånken"]]);
+H("Helly Hansen",
+  "Le capitaine norvégien Helly Juell Hansen et sa femme Maren commencent en 1877 à imprégner des toiles de lin avec de l'huile de lin pour fabriquer des vêtements imperméables pour les marins. L'entreprise développe ensuite les premières sous-couches synthétiques respirantes (le système Lifa, en 1970). Helly Hansen équipe aujourd'hui de nombreux professionnels de la mer et des pistes.",
+  [[1877, "Premiers cirés imperméabilisés à l'huile de lin"], [1970, "Invention de la sous-couche technique Lifa"]]);
+H("Aigle",
+  "En 1853, l'Américain Hiram Hutchinson achète la licence de vulcanisation de Charles Goodyear et s'installe à Langlée, près de Montargis, pour fabriquer des chaussures en caoutchouc. Il baptise sa marque « À l'aigle », en référence au symbole américain. Les bottes en caoutchouc naturel, toujours assemblées à la main à Ingrandes-sur-Vienne, sont devenues un classique de la campagne française.",
+  [[1853, "Hiram Hutchinson fonde l'entreprise près de Montargis"]]);
+
+// ---------- Chaussures ----------
+H("Paraboot",
+  "Rémy Richard, fils de paysans d'Isère, fonde en 1908 un atelier de chaussures à Izeaux. Lors d'un voyage aux États-Unis, il découvre les chaussures à semelle en caoutchouc et décide d'en produire, avec du latex importé du port brésilien de Pará : Paraboot est né. L'entreprise vulcanise encore elle-même ses semelles et coud ses chaussures en montage norvégien ou Goodyear. Les modèles Michael (1945) et Chambord sont devenus des classiques indémodables.",
+  [[1908, "Rémy Richard fonde son atelier en Isère"], [1927, "Dépôt de la marque Paraboot"], [1945, "Création du modèle Michael"]]);
+H("J.M. Weston",
+  "Édouard Blanchard ouvre une fabrique de chaussures à Limoges en 1891. Son fils Eugène part étudier le montage Goodyear aux États-Unis, dans le Massachusetts, et en rapporte le nom de la ville de Weston. Le mocassin 180, créé en 1946, devient l'uniforme de la jeunesse dorée parisienne dans les années 1960 (« la bande du Drugstore »). Weston possède sa propre tannerie, la Tannerie Bastin, en Limousin.",
+  [[1891, "Édouard Blanchard ouvre sa fabrique à Limoges"], [1922, "Ouverture de la boutique du boulevard de Courcelles à Paris"], [1946, "Création du mocassin 180"]]);
+H("Church's",
+  "Thomas Church et ses trois fils fondent leur atelier à Northampton en 1873. La maison est l'une des premières à proposer des chaussures en plusieurs largeurs et des demi-pointures. Le richelieu Consul et le derby Shannon deviennent des classiques. Church's a été rachetée en 1999 par le groupe Prada, ce qui a accompagné une montée en gamme des prix.",
+  [[1873, "Fondation à Northampton"], [1999, "Rachat par le groupe Prada"]]);
+H("Crockett & Jones",
+  "Charles Jones et son beau-frère James Crockett fondent leur entreprise à Northampton en 1879. Toujours dirigée par la famille Jones, elle fabrique des souliers cousus Goodyear de grande qualité dans son usine de Perry Street. Les modèles de la maison sont portés par James Bond dans plusieurs films depuis Skyfall.",
+  [[1879, "Fondation à Northampton"], [2012, "Daniel Craig porte des Crockett & Jones dans Skyfall"]]);
+H("Alden",
+  "Charles H. Alden fonde son entreprise en 1884 à Middleborough, dans le Massachusetts. Alden est l'une des dernières manufactures américaines de souliers cousus Goodyear. Son nom est inséparable du cordovan, cuir de cheval de la tannerie Horween de Chicago, dont elle est l'un des principaux clients. Ses formes orthopédiques (Modified last) sont appréciées des médecins.",
+  [[1884, "Fondation dans le Massachusetts"], [1970, "Installation à Middleborough"]]);
+H("Red Wing",
+  "Charles Beckman, marchand de chaussures, fonde en 1905 la Red Wing Shoe Company dans la ville de Red Wing, au Minnesota, pour équiper les mineurs, bûcherons et agriculteurs. Pendant les guerres mondiales, l'entreprise fournit l'armée américaine. Les modèles Moc Toe (1952) et Iron Ranger, inspirés des bottes des mineurs de fer, sont devenus des icônes de la mode « heritage ».",
+  [[1905, "Fondation à Red Wing, Minnesota"], [1952, "Lancement de la Moc Toe"]]);
+H("Dr. Martens",
+  "En 1945, le médecin militaire allemand Klaus Märtens se blesse à la cheville et imagine une semelle à coussin d'air. Avec son ami Herbert Funck, il la fabrique à partir de caoutchouc récupéré. En 1959, la firme anglaise Griggs, à Wollaston, achète la licence et sort la boot 1460, nommée d'après sa date de naissance, le 1er avril 1960. D'abord chaussure de travail pour les facteurs et policiers, elle est adoptée par les skinheads, les punks et les grunges.",
+  [[1945, "Klaus Märtens imagine sa semelle à coussin d'air"], [1960, "La boot 1460 sort de l'usine Griggs le 1er avril"], [2003, "Fin de la production principale en Angleterre"], [2021, "Introduction en Bourse à Londres"]]);
+H("Clarks",
+  "Les frères quakers Cyrus et James Clark commencent en 1825 à fabriquer des chaussons en peau de mouton à Street, dans le Somerset. En 1950, Nathan Clark, arrière-petit-fils du fondateur, crée la Desert Boot, inspirée des bottes en daim que les officiers britanniques achetaient au bazar du Caire. La Wallabee suit en 1967. Ces deux modèles deviennent des icônes, des mods anglais aux rappeurs jamaïcains.",
+  [[1825, "Cyrus et James Clark fondent l'entreprise"], [1950, "Création de la Desert Boot"], [1967, "Lancement de la Wallabee"]]);
+H("Timberland",
+  "Nathan Swartz rachète en 1952 l'Abington Shoe Company, dans le Massachusetts. En 1973, ses fils lancent une boot imperméable en nubuck jaune, avec semelle injectée : la « Yellow Boot ». Prévue pour les ouvriers, elle devient dans les années 1990 un symbole du hip-hop new-yorkais. Timberland appartient à VF Corporation depuis 2011.",
+  [[1952, "Nathan Swartz rachète l'Abington Shoe Company"], [1973, "Lancement de la Yellow Boot"], [1978, "L'entreprise prend le nom de Timberland"], [2011, "Rachat par VF Corporation"]]);
+H("Birkenstock",
+  "Johann Adam Birkenstock est enregistré comme cordonnier en 1774 en Hesse. Ses descendants développent au XIXe et au XXe siècle des semelles anatomiques qui épousent la forme du pied. En 1963, Karl Birkenstock lance la sandale Madrid, puis l'Arizona en 1973. D'abord associée aux hippies et au confort, Birkenstock est devenue une marque de mode, introduite en Bourse à New York en 2023.",
+  [[1774, "Johann Adam Birkenstock, cordonnier en Hesse"], [1963, "Lancement de la sandale Madrid"], [1973, "Lancement de l'Arizona"], [2023, "Introduction en Bourse à New York"]]);
+H("Veja",
+  "Sébastien Kopp et François-Ghislain Morillion, deux amis d'école de commerce, enquêtent en 2002 sur les usines de grandes marques en Chine. Choqués, ils lancent Veja en 2004 avec un principe : dépenser l'argent habituellement consacré à la publicité dans des matières de meilleure qualité, achetées à un prix juste. Le coton bio vient du Brésil et du Pérou, le caoutchouc directement de seringueiros d'Amazonie. Veja a aussi ouvert des ateliers de réparation de baskets, toutes marques confondues.",
+  [[2004, "Lancement des premières baskets Veja"], [2013, "Sortie de la V-10, devenue best-seller"], [2020, "Ouverture d'ateliers de réparation de baskets"]]);
+H("Common Projects",
+  "Flavio Girolami, directeur artistique, et Prathan Poopat, designer, fondent Common Projects en 2004 avec l'idée de créer une basket parfaite, débarrassée de tout logo. L'Achilles Low, fabriquée en Italie, ne porte qu'un numéro de série doré indiquant le modèle, la taille et la couleur. Elle a lancé la mode de la basket blanche minimaliste de luxe.",
+  [[2004, "Création de Common Projects et de l'Achilles Low"]]);
+H("Hoka",
+  "Nicolas Mermoud et Jean-Luc Diard, deux anciens de Salomon, fondent Hoka One One en 2009 près d'Annecy. Leur idée : une chaussure à semelle très épaisse et très amortie pour descendre plus vite en trail. Moqué au départ, le concept « maximaliste » est adopté par les ultra-traileurs puis par le grand public. Hoka appartient depuis 2013 au groupe américain Deckers.",
+  [[2009, "Création de Hoka One One en Haute-Savoie"], [2013, "Rachat par Deckers Brands"], [2021, "Le nom est raccourci en Hoka"]]);
+H("UGG",
+  "Brian Smith, surfeur australien installé en Californie, commence en 1978 à vendre des bottes en peau de mouton, une chaussure traditionnelle des surfeurs australiens. La marque UGG Australia, rachetée par Deckers en 1995, devient un phénomène mondial au début des années 2000 grâce aux célébrités. En Australie, « ugg » reste un nom commun, ce qui a donné lieu à de longues batailles juridiques.",
+  [[1978, "Brian Smith importe les bottes en Californie"], [1995, "Rachat par Deckers"], [2003, "Les bottes UGG deviennent un phénomène de mode"]]);
