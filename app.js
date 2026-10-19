@@ -323,8 +323,8 @@ function renderVetement(id, onglet = "matieres") {
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel"><span class="roman" aria-hidden="true">I.</span>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel"><span class="roman" aria-hidden="true">II.</span>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"/><path d="M8 7l8 2M8 11l8 2M8 15l8 2"/><path d="M16 17c2 0 3.5 1 4 2.5"/></svg>Les matières</button>
+      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"/><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"/></svg>Les maisons</button>
     </div>
     <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0"></div></section>
     ${blocSources([...v.sources, ...SOURCES_MARQUES])}
