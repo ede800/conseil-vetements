@@ -69,7 +69,7 @@ const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").rep
 
   ecrire("index.html", page({
     titre: "Bien Vêtu — Guide d'achat de vêtements : matières et meilleures marques",
-    description: "Quelles matières choisir pour chaque vêtement, et quelles marques acheter selon votre budget : tier lists, fiches de 450 maisons et guide de 76 matières.",
+    description: "Quelles matières choisir pour chaque vêtement, et quelles marques acheter selon votre budget : tier lists, fiches de 500 maisons et guide de 76 matières.",
     url: URL_SITE,
     jsonld: { "@context": "https://schema.org", "@type": "WebSite", name: "Bien Vêtu", url: URL_SITE, inLanguage: "fr" }
   }));
@@ -95,7 +95,7 @@ const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").rep
   // Accueil réécrit avec son contenu pré-rendu (liste des pièces lisible sans JavaScript)
   ecrire("index.html", page({
     titre: "Bien Vêtu — Guide d'achat de vêtements : matières et meilleures marques",
-    description: "Quelles matières choisir pour chaque vêtement, et quelles marques acheter selon votre budget : tier lists, fiches de 450 maisons et guide de 76 matières.",
+    description: "Quelles matières choisir pour chaque vêtement, et quelles marques acheter selon votre budget : tier lists, fiches de 500 maisons et guide de 76 matières.",
     url: URL_SITE,
     contenu: rendre("").contenu,
     jsonld: { "@context": "https://schema.org", "@type": "WebSite", name: "Bien Vêtu", url: URL_SITE, inLanguage: "fr" }
@@ -115,7 +115,7 @@ const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").rep
 
   // Pages générales
   ajouter("matieres/", "#/matieres", "Le guide de 76 matières textiles : fibres naturelles, artificielles et synthétiques, cuirs et étoffes, avec leurs qualités, défauts et entretien.", { priorite: "0.8" });
-  ajouter("maisons/", "#/maisons", "L'annuaire de 450 marques de vêtements notées sur cinq critères : matières, confection, durabilité, rapport qualité-prix, éthique.", { priorite: "0.8" });
+  ajouter("maisons/", "#/maisons", "L'annuaire de 500 marques de vêtements notées sur cinq critères : matières, confection, durabilité, rapport qualité-prix, éthique.", { priorite: "0.8" });
   ajouter("conseils/", "#/conseils", "Les bons réflexes pour reconnaître un vêtement de qualité, et un lexique simple des termes techniques.", { priorite: "0.7" });
   ajouter("methode/", "#/methode", "Comment Bien Vêtu classe les marques : budgets, rangs S à C, cinq critères notés de 1 à 5 et sources.", { priorite: "0.4" });
 
