@@ -61,71 +61,201 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Cuir pleine fleur</h3>
-              <div>
-                <p>Robuste, il se patine et se répare. Le tannage végétal donne un cuir ferme qui fonce avec le temps.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 60 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">60 – 400 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 400 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Cuir grainé</h3>
-              <div>
-                <p>Grain imprimé ou naturel qui cache les rayures : idéal pour un sac de tous les jours.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/le-tanneur">
+        <span class="logo-mark logo-s"><img src="logos/64/le-tanneur.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Le Tanneur <span class="go" aria-hidden="true">→</span></h4>
+        <p>Maroquinerie française solide</p>
+      </a>
+      <a class="house" href="#/maison/polene">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/polene.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Polène <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir de grande qualité pour le prix</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Toile de coton (canvas)</h3>
-              <div>
-                <p>Légère, robuste et réparable : parfaite pour les cabas et sacs de week-end.</p>
-                <a class="mat-link" href="#/matiere/toile-canvas-duck">Fiche matière : Toile (canvas, duck)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/sezane">
+        <span class="logo-mark logo-s"><img src="logos/64/sezane.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sézane <span class="go" aria-hidden="true">→</span></h4>
+        <p>Jolis sacs en cuir</p>
+      </a>
+      <a class="house" href="#/maison/longchamp">
+        <span class="logo-mark logo-s"><img src="logos/64/longchamp.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Longchamp <span class="go" aria-hidden="true">→</span></h4>
+        <p>Le Pliage durable et réparable</p>
+      </a>
+      <a class="house" href="#/maison/fjallraven">
+        <span class="logo-mark logo-s"><img src="logos/64/fjallraven.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Fjällräven <span class="go" aria-hidden="true">→</span></h4>
+        <p>Kånken robuste</p>
+      </a>
+      <a class="house" href="#/maison/cote-ciel">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/cote-ciel.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Côte&amp;Ciel <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sacs à dos design</p>
+      </a>
+      <a class="house" href="#/maison/bleu-de-chauffe">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">BD</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Bleu de Chauffe <span class="go" aria-hidden="true">→</span></h4>
+        <p>Maroquinerie française de qualité</p>
+      </a>
+      <a class="house" href="#/maison/filson">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/filson.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Filson <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sacs de toile quasi éternels</p>
+      </a>
+      <a class="house" href="#/maison/tanner-goods">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">TG</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Tanner Goods <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir tanné végétal</p>
+      </a>
+      <a class="house" href="#/maison/a-p-c">
+        <span class="logo-mark logo-s"><img src="logos/64/a-p-c.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>A.P.C. <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sacs sobres</p>
+      </a>
+      <a class="house" href="#/maison/lancel">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">L</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Lancel <span class="go" aria-hidden="true">→</span></h4>
+        <p>Maroquinier français</p>
+      </a>
+      <a class="house" href="#/maison/coach">
+        <span class="logo-mark logo-s"><img src="logos/64/coach.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Coach <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bon cuir pour le prix</p>
+      </a>
+      <a class="house" href="#/maison/jerome-dreyfuss">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/jerome-dreyfuss.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Jérôme Dreyfuss <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sacs souples en beaux cuirs</p>
+      </a>
+      <a class="house" href="#/maison/samsonite">
+        <span class="logo-mark logo-s"><img src="logos/64/samsonite.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Samsonite <span class="go" aria-hidden="true">→</span></h4>
+        <p>Valises fiables et garanties</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Nylon balistique / Cordura</h3>
-              <div>
-                <p>Extrêmement résistant à l'abrasion : sacs à dos et sacs de voyage.</p>
-                <a class="mat-link" href="#/matiere/polyamide-nylon">Fiche matière : Polyamide (nylon)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/michael-kors">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">MK</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Michael Kors <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prime de marque</p>
+      </a>
+      <a class="house" href="#/maison/furla">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">F</span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Furla <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/guess">
+        <span class="logo-mark logo-s"><img src="logos/64/guess.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Guess <span class="go" aria-hidden="true">→</span></h4>
+        <p>Simili fréquent</p>
+      </a>
+      <a class="house" href="#/maison/lacoste">
+        <span class="logo-mark logo-s"><img src="logos/64/lacoste.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Lacoste <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/lancaster">
+        <span class="logo-mark logo-s"><img src="logos/64/lancaster.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Lancaster <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct pour le prix</p>
+      </a>
+      <a class="house" href="#/maison/kate-spade">
+        <span class="logo-mark logo-s"><img src="logos/64/kate-spade.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Kate Spade <span class="go" aria-hidden="true">→</span></h4>
+        <p>Couleurs, qualité moyenne</p>
+      </a>
+      <a class="house" href="#/maison/fossil">
+        <span class="logo-mark logo-s"><img src="logos/64/fossil.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Fossil <span class="go" aria-hidden="true">→</span></h4>
+        <p>Maroquinerie accessible</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Point sellier</h3>
-              <div>
-                <p>Couture faite main avec deux aiguilles : si un fil casse, la couture tient. Signe de grande maroquinerie.</p>
-                
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Simili-cuir : pèle aux coins et aux poignées.</li><li>Cuir croûte enduit : se fissure.</li><li>Tranches peintes qui s'écaillent.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Rembourrez les sacs en cuir avec du papier quand vous ne les utilisez pas.</li><li>Nourrissez le cuir une ou deux fois par an.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode</h4><p>Prix pour le logo</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -176,6 +306,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/sac";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

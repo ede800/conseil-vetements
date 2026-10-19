@@ -61,71 +61,171 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Coton (bio)</h3>
-              <div>
-                <p>Respirant et hypoallergénique : idéal au quotidien, surtout pour les culottes.</p>
-                <a class="mat-link" href="#/matiere/coton">Fiche matière : Coton<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 25 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">25 – 80 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 80 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Modal / micromodal</h3>
-              <div>
-                <p>Très doux et invisible sous les vêtements.</p>
-                <a class="mat-link" href="#/matiere/modal">Fiche matière : Modal<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/chantelle">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/chantelle.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Chantelle <span class="go" aria-hidden="true">→</span></h4>
+        <p>Maison française, maintien et dentelle de référence</p>
+      </a>
+      <a class="house" href="#/maison/princesse-tam-tam">
+        <span class="logo-mark logo-s"><img src="logos/64/princesse-tam-tam.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Princesse tam.tam <span class="go" aria-hidden="true">→</span></h4>
+        <p>Coton et belles matières</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Dentelle de Calais (Leavers)</h3>
-              <div>
-                <p>Dentelle tissée sur des métiers anciens dans le nord de la France : souple, fine et très résistante. La référence mondiale.</p>
-                <a class="mat-link" href="#/matiere/dentelle-leavers-calais">Fiche matière : Dentelle Leavers (Calais)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/passionata">
+        <span class="logo-mark logo-s"><img src="logos/64/passionata.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Passionata <span class="go" aria-hidden="true">→</span></h4>
+        <p>Lingerie mode de Chantelle</p>
+      </a>
+      <a class="house" href="#/maison/aubade">
+        <span class="logo-mark logo-s"><img src="logos/64/aubade.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Aubade <span class="go" aria-hidden="true">→</span></h4>
+        <p>Dentelles françaises</p>
+      </a>
+      <a class="house" href="#/maison/intimissimi">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">I</span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Intimissimi <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bon rapport qualité-prix</p>
+      </a>
+      <a class="house" href="#/maison/calvin-klein">
+        <span class="logo-mark logo-s"><img src="logos/64/calvin-klein.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Calvin Klein <span class="go" aria-hidden="true">→</span></h4>
+        <p>Brassières confortables</p>
+      </a>
+      <a class="house" href="#/maison/le-slip-francais">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/le-slip-francais.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Le Slip Français <span class="go" aria-hidden="true">→</span></h4>
+        <p>Made in France</p>
+      </a>
+      <a class="house" href="#/maison/simone-perele">
+        <span class="logo-mark logo-s"><img src="logos/64/simone-perele.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Simone Pérèle <span class="go" aria-hidden="true">→</span></h4>
+        <p>Maintien et élégance</p>
+      </a>
+      <a class="house" href="#/maison/lise-charmel">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/lise-charmel.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Lise Charmel <span class="go" aria-hidden="true">→</span></h4>
+        <p>Belles dentelles</p>
+      </a>
+      <a class="house" href="#/maison/organic-basics">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/organic-basics.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Danemark</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Organic Basics <span class="go" aria-hidden="true">→</span></h4>
+        <p>Coton bio</p>
+      </a>
+      <a class="house" href="#/maison/sloggi">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">S</span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sloggi <span class="go" aria-hidden="true">→</span></h4>
+        <p>Confort reconnu</p>
+      </a>
+      <a class="house" href="#/maison/marks-spencer">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/marks-spencer.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Marks &amp; Spencer <span class="go" aria-hidden="true">→</span></h4>
+        <p>Nombreuses tailles, bonne qualité</p>
+      </a>
+      <a class="house" href="#/maison/triumph">
+        <span class="logo-mark logo-s"><img src="logos/64/triumph.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Allemagne / Suisse</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Triumph <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bon maintien et nombreuses tailles</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Soie</h3>
-              <div>
-                <p>Douce, légère et thermorégulatrice : la lingerie de luxe par excellence.</p>
-                <a class="mat-link" href="#/matiere/soie">Fiche matière : Soie<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/calzedonia">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">C</span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Calzedonia <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/darjeeling">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/darjeeling.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Darjeeling <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/victoria-s-secret">
+        <span class="logo-mark logo-s"><img src="logos/64/victoria-s-secret.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Victoria's Secret <span class="go" aria-hidden="true">→</span></h4>
+        <p>Marketing fort, qualité variable</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Microfibre polyamide + élasthanne</h3>
-              <div>
-                <p>Lisse, invisible et qui maintient : utile pour les modèles sans couture et le sport.</p>
-                <a class="mat-link" href="#/matiere/elasthanne-lycra-spandex">Fiche matière : Élasthanne (Lycra, spandex)<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Dentelle rêche en polyester qui gratte et se déchire.</li><li>Armatures mal gainées qui percent le tissu.</li><li>Bretelles fines sans réglage métallique.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Le soutien-gorge doit tenir avec la bande du dos, pas avec les bretelles : à l'achat, il doit être confortable sur l'agrafe la plus lâche.</li><li>Alternez plusieurs soutiens-gorge pour laisser l'élasthanne reprendre sa forme.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode</h4><p>Maintien négligé</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -176,6 +276,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/lingerie";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

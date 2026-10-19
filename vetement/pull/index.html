@@ -61,87 +61,207 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Laine mérinos</h3>
-              <div>
-                <p>Laine très fine (moins de 24 microns) issue du mouton mérinos : elle ne gratte pas, régule la température et résiste aux odeurs. Le meilleur pull polyvalent, du bureau au week-end.</p>
-                <a class="mat-link" href="#/matiere/laine-merinos">Fiche matière : Laine mérinos<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 50 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">50 – 180 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 180 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Lambswool (laine d'agneau)</h3>
-              <div>
-                <p>Laine de la première tonte : douce, gonflante, très chaude. Aspect plus rustique que le mérinos, parfaite en hiver.</p>
-                <a class="mat-link" href="#/matiere/lambswool-laine-d-agneau">Fiche matière : Lambswool (laine d'agneau)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/saint-james">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/saint-james.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Saint James <span class="go" aria-hidden="true">→</span></h4>
+        <p>Marinières et pulls en laine quasi indestructibles</p>
+      </a>
+      <a class="house" href="#/maison/asket">
+        <span class="logo-mark logo-s"><img src="logos/64/asket.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Asket <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mérinos et lambswool traçables, très bon rapport qualité-prix</p>
+      </a>
+      <a class="house" href="#/maison/howlin">
+        <span class="logo-mark logo-s"><img src="logos/64/howlin.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Belgique / Écosse</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Howlin' <span class="go" aria-hidden="true">→</span></h4>
+        <p>Shetland écossais coloré</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Shetland</h3>
-              <div>
-                <p>Laine des îles Shetland, nerveuse et un peu piquante, mais quasi indestructible. Elle s'adoucit avec le temps.</p>
-                <a class="mat-link" href="#/matiere/shetland">Fiche matière : Shetland<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/armor-lux">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/armor-lux.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Armor Lux <span class="go" aria-hidden="true">→</span></h4>
+        <p>Laine solide fabriquée en France</p>
+      </a>
+      <a class="house" href="#/maison/arket">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">A</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Arket <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bonne laine, style minimaliste</p>
+      </a>
+      <a class="house" href="#/maison/le-minor">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/le-minor.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Le Minor <span class="go" aria-hidden="true">→</span></h4>
+        <p>Pulls marins tricotés en Bretagne</p>
+      </a>
+      <a class="house" href="#/maison/hartford">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/hartford.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Hartford <span class="go" aria-hidden="true">→</span></h4>
+        <p>Belles mailles décontractées</p>
+      </a>
+      <a class="house" href="#/maison/jamieson-s-of-shetland">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/jamieson-s-of-shetland.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Jamieson's of Shetland <span class="go" aria-hidden="true">→</span></h4>
+        <p>Shetland authentique</p>
+      </a>
+      <a class="house" href="#/maison/aran-woollen-mills">
+        <span class="logo-mark logo-s"><img src="logos/64/aran-woollen-mills.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Irlande</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Aran Woollen Mills <span class="go" aria-hidden="true">→</span></h4>
+        <p>Pulls irlandais authentiques</p>
+      </a>
+      <a class="house" href="#/maison/patagonia">
+        <span class="logo-mark logo-s"><img src="logos/64/patagonia.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Patagonia <span class="go" aria-hidden="true">→</span></h4>
+        <p>Laine recyclée et responsable</p>
+      </a>
+      <a class="house" href="#/maison/sezane">
+        <span class="logo-mark logo-s"><img src="logos/64/sezane.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sézane <span class="go" aria-hidden="true">→</span></h4>
+        <p>Belles mailles féminines, qualité correcte</p>
+      </a>
+      <a class="house" href="#/maison/kujten">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/kujten.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Kujten <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cachemire doux et coloré</p>
+      </a>
+      <a class="house" href="#/maison/j-crew">
+        <span class="logo-mark logo-s"><img src="logos/64/j-crew.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>J.Crew <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mailles en mérinos et cachemire correctes</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Cachemire</h3>
-              <div>
-                <p>Duvet de la chèvre cachemire : extrêmement doux et jusqu'à trois fois plus chaud que la laine à poids égal. Choisissez un cachemire « 2 fils » (2-ply), plus dense et plus durable.</p>
-                <a class="mat-link" href="#/matiere/cachemire">Fiche matière : Cachemire<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/cos">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">C</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>COS <span class="go" aria-hidden="true">→</span></h4>
+        <p>Beaux designs, qualité inégale</p>
+      </a>
+      <a class="house" href="#/maison/massimo-dutti">
+        <span class="logo-mark logo-s"><img src="logos/64/massimo-dutti.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Massimo Dutti <span class="go" aria-hidden="true">→</span></h4>
+        <p>Laine parfois mélangée</p>
+      </a>
+      <a class="house" href="#/maison/gant">
+        <span class="logo-mark logo-s"><img src="logos/64/gant.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis / Suède</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Gant <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/other-stories">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">OS</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>&amp; Other Stories <span class="go" aria-hidden="true">→</span></h4>
+        <p>Jolies mailles, matière variable</p>
+      </a>
+      <a class="house" href="#/maison/maje">
+        <span class="logo-mark logo-s"><img src="logos/64/maje.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Maje <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mode, matières moyennes pour le prix</p>
+      </a>
+      <a class="house" href="#/maison/sandro">
+        <span class="logo-mark logo-s"><img src="logos/64/sandro.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sandro <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mode, matières moyennes pour le prix</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Alpaga, mohair, yak</h3>
-              <div>
-                <p>Fibres très chaudes et légères, au caractère marqué : l'alpaga est doux et gonflant, le mohair brillant et aérien.</p>
-                <a class="mat-link" href="#/matiere/mohair">Fiche matière : Mohair<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Coton</h3>
-              <div>
-                <p>Pour la mi-saison : moins chaud que la laine mais lavable facilement et sans démangeaisons.</p>
-                <a class="mat-link" href="#/matiere/coton">Fiche matière : Coton<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">07</span>
-              <h3>Laine shetland ou aran torsadée</h3>
-              <div>
-                <p>Les pulls irlandais (aran) sont tricotés épais avec une laine qui conserve sa lanoline (graisse naturelle) : chaleur et résistance à la pluie.</p>
-                <a class="mat-link" href="#/matiere/shetland">Fiche matière : Shetland<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Acrylique : bouloche dès les premières semaines, ne tient pas chaud, crée de l'électricité statique.</li><li>Mélanges avec moins de 50 % de laine : on perd les avantages de la laine.</li><li>Cachemire à moins de 80 € : fibres courtes de mauvaise qualité, maille lâche.</li><li>Laine « superwash » de bas de gamme : traitée pour passer en machine, elle perd une partie de son gonflant.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Étirez légèrement la maille : elle doit revenir à sa forme. Une maille serrée dure plus longtemps.</li><li>Lavez la laine à froid ou au programme laine, séchez à plat, jamais sur cintre.</li><li>Un peu de boulochage au début est normal, même sur un bon cachemire : un peigne à pulls suffit.</li><li>Rangez les pulls pliés, avec du bois de cèdre contre les mites.</li></ul>
-          </div>
+              <div class="houses">
+      <a class="house" href="#/maison/tommy-hilfiger">
+        <span class="logo-mark logo-s"><img src="logos/64/tommy-hilfiger.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Tommy Hilfiger <span class="go" aria-hidden="true">→</span></h4>
+        <p>Souvent coton/synthétique à prix élevé</p>
+      </a>
+      <a class="house" href="#/maison/the-kooples">
+        <span class="logo-mark logo-s"><img src="logos/64/the-kooples.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>The Kooples <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prix mode</p>
+      </a>
+      <a class="house" href="#/maison/zadig-voltaire">
+        <span class="logo-mark logo-s"><img src="logos/64/zadig-voltaire.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Zadig &amp; Voltaire <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cachemire mélangé cher</p>
+      </a></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -192,6 +312,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/pull";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

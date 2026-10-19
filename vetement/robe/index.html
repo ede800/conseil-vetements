@@ -61,87 +61,213 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Lin</h3>
-              <div>
-                <p>La robe d'été idéale : fraîche, solide et qui s'adoucit à chaque lavage.</p>
-                <a class="mat-link" href="#/matiere/lin">Fiche matière : Lin<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 50 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">50 – 250 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 250 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Coton (popeline, voile, broderie anglaise)</h3>
-              <div>
-                <p>Respirant et facile d'entretien. La popeline donne de la structure, le voile de la légèreté.</p>
-                <a class="mat-link" href="#/matiere/popeline">Fiche matière : Popeline<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/sezane">
+        <span class="logo-mark logo-s"><img src="logos/64/sezane.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sézane <span class="go" aria-hidden="true">→</span></h4>
+        <p>Coupes féminines et matières naturelles</p>
+      </a>
+      <a class="house" href="#/maison/rouje">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/rouje.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Rouje <span class="go" aria-hidden="true">→</span></h4>
+        <p>Robes parisiennes iconiques</p>
+      </a>
+      <a class="house" href="#/maison/reformation">
+        <span class="logo-mark logo-s"><img src="logos/64/reformation.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Reformation <span class="go" aria-hidden="true">→</span></h4>
+        <p>Matières responsables, coupes flatteuses</p>
+      </a>
+      <a class="house" href="#/maison/soeur">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">S</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Soeur <span class="go" aria-hidden="true">→</span></h4>
+        <p>Robes élégantes en belles matières</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Soie</h3>
-              <div>
-                <p>Fluide, lumineuse et thermorégulatrice. Idéale pour les occasions, plus fragile au quotidien.</p>
-                <a class="mat-link" href="#/matiere/soie">Fiche matière : Soie<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/other-stories">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">OS</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>&amp; Other Stories <span class="go" aria-hidden="true">→</span></h4>
+        <p>Jolies robes à choisir en fibres naturelles</p>
+      </a>
+      <a class="house" href="#/maison/arket">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">A</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Arket <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sobres et bien faites</p>
+      </a>
+      <a class="house" href="#/maison/des-petits-hauts">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/des-petits-hauts.webp" alt="" loading="lazy" decoding="async" width="42" height="42"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Des Petits Hauts <span class="go" aria-hidden="true">→</span></h4>
+        <p>Coton et lin bien travaillés</p>
+      </a>
+      <a class="house" href="#/maison/sessun">
+        <span class="logo-mark logo-s"><img src="logos/64/sessun.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sessùn <span class="go" aria-hidden="true">→</span></h4>
+        <p>Belles matières naturelles</p>
+      </a>
+      <a class="house" href="#/maison/ganni">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">G</span>
+        <div class="house-meta"><span>Danemark</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Ganni <span class="go" aria-hidden="true">→</span></h4>
+        <p>Créatif, qualité correcte</p>
+      </a>
+      <a class="house" href="#/maison/everlane">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/everlane.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Everlane <span class="go" aria-hidden="true">→</span></h4>
+        <p>Basiques transparents</p>
+      </a>
+      <a class="house" href="#/maison/comptoir-des-cotonniers">
+        <span class="logo-mark logo-s"><img src="logos/64/comptoir-des-cotonniers.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Comptoir des Cotonniers <span class="go" aria-hidden="true">→</span></h4>
+        <p>Classique</p>
+      </a>
+      <a class="house" href="#/maison/petite-mendigote">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/petite-mendigote.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Petite Mendigote <span class="go" aria-hidden="true">→</span></h4>
+        <p>Matières naturelles, style bohème</p>
+      </a>
+      <a class="house" href="#/maison/balzac-paris">
+        <span class="logo-mark logo-s"><img src="logos/64/balzac-paris.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Balzac Paris <span class="go" aria-hidden="true">→</span></h4>
+        <p>Robes rétro en petites séries</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Lyocell (Tencel)</h3>
-              <div>
-                <p>Tombé fluide proche de la soie, solide, absorbant et produit de façon propre.</p>
-                <a class="mat-link" href="#/matiere/lyocell-tencel">Fiche matière : Lyocell (Tencel)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/maje">
+        <span class="logo-mark logo-s"><img src="logos/64/maje.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Maje <span class="go" aria-hidden="true">→</span></h4>
+        <p>Très beau style, matières souvent synthétiques</p>
+      </a>
+      <a class="house" href="#/maison/sandro">
+        <span class="logo-mark logo-s"><img src="logos/64/sandro.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sandro <span class="go" aria-hidden="true">→</span></h4>
+        <p>Même constat</p>
+      </a>
+      <a class="house" href="#/maison/ba-sh">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/ba-sh.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>ba&amp;sh <span class="go" aria-hidden="true">→</span></h4>
+        <p>Viscose fréquente</p>
+      </a>
+      <a class="house" href="#/maison/claudie-pierlot">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">CP</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Claudie Pierlot <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/massimo-dutti">
+        <span class="logo-mark logo-s"><img src="logos/64/massimo-dutti.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Massimo Dutti <span class="go" aria-hidden="true">→</span></h4>
+        <p>Variable</p>
+      </a>
+      <a class="house" href="#/maison/cos">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">C</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>COS <span class="go" aria-hidden="true">→</span></h4>
+        <p>Variable</p>
+      </a>
+      <a class="house" href="#/maison/morgan">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/morgan.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Morgan <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mode</p>
+      </a>
+      <a class="house" href="#/maison/kookai">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">K</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Kookaï <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mode, matières souvent synthétiques</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Maille de laine ou mérinos</h3>
-              <div>
-                <p>La robe pull d'hiver : chaude, confortable et qui ne se froisse pas.</p>
-                <a class="mat-link" href="#/matiere/laine-merinos">Fiche matière : Laine mérinos<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Crêpe de laine</h3>
-              <div>
-                <p>Tombé fluide et élégant, ne marque pas les plis : parfait pour le bureau.</p>
-                <a class="mat-link" href="#/matiere/laine">Fiche matière : Laine<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">07</span>
-              <h3>Cupro</h3>
-              <div>
-                <p>Fibre issue du coton recyclé, soyeuse et respirante, idéale en doublure.</p>
-                <a class="mat-link" href="#/matiere/cupro">Fiche matière : Cupro<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Polyester en été : on a chaud et le tissu marque la transpiration.</li><li>Viscose très bon marché : rétrécit et se déforme au premier lavage.</li><li>Doublure polyester sur une robe chère.</li><li>Fermetures éclair légères qui se bloquent ou se décousent.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Regardez l'intérieur : coutures surfilées ou à l'anglaise (fermées) signent une robe bien faite.</li><li>Une marge de couture généreuse permet de faire retoucher plus tard.</li><li>Lavez les fibres délicates à froid en filet, séchez à plat ou sur cintre.</li></ul>
-          </div>
+              <div class="houses">
+      <a class="house" href="#/maison/the-kooples">
+        <span class="logo-mark logo-s"><img src="logos/64/the-kooples.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>The Kooples <span class="go" aria-hidden="true">→</span></h4>
+        <p>Polyester vendu cher</p>
+      </a>
+      <a class="house" href="#/maison/zadig-voltaire">
+        <span class="logo-mark logo-s"><img src="logos/64/zadig-voltaire.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Zadig &amp; Voltaire <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prix mode</p>
+      </a></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -192,6 +318,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/robe";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

@@ -61,63 +61,171 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Liège et latex</h3>
-              <div>
-                <p>Semelle qui prend la forme du pied avec le temps : excellent soutien de la voûte plantaire.</p>
-                <a class="mat-link" href="#/matiere/liege">Fiche matière : Liège<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 40 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">40 – 150 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 150 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Cuir pleine fleur</h3>
-              <div>
-                <p>Sangles douces et durables, qui se patinent.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/birkenstock">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/birkenstock.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Birkenstock <span class="go" aria-hidden="true">→</span></h4>
+        <p>La sandale en liège de référence</p>
+      </a>
+      <a class="house" href="#/maison/teva">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">T</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Teva <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sandales de randonnée durables</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Corde de jute</h3>
-              <div>
-                <p>Semelle traditionnelle des espadrilles : fraîche et légère, mais à protéger de l'eau.</p>
-                <a class="mat-link" href="#/matiere/jute">Fiche matière : Jute<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/rondinaud">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">R</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Rondinaud <span class="go" aria-hidden="true">→</span></h4>
+        <p>Charentaises et espadrilles françaises</p>
+      </a>
+      <a class="house" href="#/maison/art-of-soule">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">AO</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Art of Soule <span class="go" aria-hidden="true">→</span></h4>
+        <p>Espadrilles basques faites main</p>
+      </a>
+      <a class="house" href="#/maison/arizona-love">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">AL</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Arizona Love <span class="go" aria-hidden="true">→</span></h4>
+        <p>Inspirées randonnée</p>
+      </a>
+      <a class="house" href="#/maison/chaco">
+        <span class="logo-mark logo-s"><img src="logos/64/chaco.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Chaco <span class="go" aria-hidden="true">→</span></h4>
+        <p>Robustes</p>
+      </a>
+      <a class="house" href="#/maison/sezane">
+        <span class="logo-mark logo-s"><img src="logos/64/sezane.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sézane <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sandales féminines réussies</p>
+      </a>
+      <a class="house" href="#/maison/k-jacques">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/k-jacques.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>K.Jacques <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sandales tropéziennes iconiques</p>
+      </a>
+      <a class="house" href="#/maison/rondini">
+        <span class="logo-mark logo-s"><img src="logos/64/rondini.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Rondini <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sandales de Saint-Tropez</p>
+      </a>
+      <a class="house" href="#/maison/mephisto">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/mephisto.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Mephisto <span class="go" aria-hidden="true">→</span></h4>
+        <p>Confort</p>
+      </a>
+      <a class="house" href="#/maison/keen">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/keen.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Keen <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sandales outdoor protectrices</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Caoutchouc / EVA</h3>
-              <div>
-                <p>Pour la plage et le sport : imperméable et léger.</p>
-                <a class="mat-link" href="#/matiere/caoutchouc-naturel">Fiche matière : Caoutchouc naturel<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/ancient-greek-sandals">
+        <span class="logo-mark logo-s"><img src="logos/64/ancient-greek-sandals.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Grèce</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Ancient Greek Sandals <span class="go" aria-hidden="true">→</span></h4>
+        <p>Jolies, durée moyenne</p>
+      </a>
+      <a class="house" href="#/maison/castaner">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/castaner.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Castañer <span class="go" aria-hidden="true">→</span></h4>
+        <p>Espadrilles connues, prix élevé</p>
+      </a>
+      <a class="house" href="#/maison/rive-droite">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">RD</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Rive Droite <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/camper">
+        <span class="logo-mark logo-s"><img src="logos/64/camper.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Camper <span class="go" aria-hidden="true">→</span></h4>
+        <p>Design, confort</p>
+      </a>
+      <a class="house" href="#/maison/geox">
+        <span class="logo-mark logo-s"><img src="logos/64/geox.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Geox <span class="go" aria-hidden="true">→</span></h4>
+        <p>Confort</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Semelles plates sans soutien pour marcher longtemps.</li><li>Sangles en simili qui blessent.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Évitez de mouiller les semelles en jute et en liège.</li><li>Les sandales Birkenstock et similaires se ressemellent chez le cordonnier.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode</h4><p>Prix pour le nom</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -168,6 +276,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/sandales";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

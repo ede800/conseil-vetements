@@ -61,79 +61,165 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Lambswool</h3>
-              <div>
-                <p>Laine d'agneau douce et chaude : l'écharpe écossaise classique.</p>
-                <a class="mat-link" href="#/matiere/lambswool-laine-d-agneau">Fiche matière : Lambswool (laine d'agneau)<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 30 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">30 – 120 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 120 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Cachemire</h3>
-              <div>
-                <p>Très doux et chaud pour son poids, idéal contre la peau du cou.</p>
-                <a class="mat-link" href="#/matiere/cachemire">Fiche matière : Cachemire<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/johnstons-of-elgin">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">JO</span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>4,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Johnstons of Elgin <span class="go" aria-hidden="true">→</span></h4>
+        <p>Écharpes en lambswool et cachemire écossaises</p>
+      </a>
+      <a class="house" href="#/maison/glen-prince">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">GP</span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Glen Prince <span class="go" aria-hidden="true">→</span></h4>
+        <p>Écharpes écossaises de qualité</p>
+      </a>
+      <a class="house" href="#/maison/hestra">
+        <span class="logo-mark logo-s"><img src="logos/64/hestra.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>4,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Hestra <span class="go" aria-hidden="true">→</span></h4>
+        <p>Gants de ski et de ville d'excellente qualité</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Mérinos</h3>
-              <div>
-                <p>Bonnet qui ne gratte pas, thermorégulateur.</p>
-                <a class="mat-link" href="#/matiere/laine-merinos">Fiche matière : Laine mérinos<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/saint-james">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/saint-james.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Saint James <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bonnets en laine solides</p>
+      </a>
+      <a class="house" href="#/maison/le-bonnet">
+        <span class="logo-mark logo-s"><img src="logos/64/le-bonnet.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Pays-Bas</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Le Bonnet <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bonnets en mérinos</p>
+      </a>
+      <a class="house" href="#/maison/arket">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">A</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Arket <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bonne laine</p>
+      </a>
+      <a class="house" href="#/maison/agnelle">
+        <span class="logo-mark logo-s"><img src="logos/64/agnelle.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Agnelle <span class="go" aria-hidden="true">→</span></h4>
+        <p>Gantier français depuis 1937</p>
+      </a>
+      <a class="house" href="#/maison/dents">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/dents.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Dents <span class="go" aria-hidden="true">→</span></h4>
+        <p>Gants anglais historiques</p>
+      </a>
+      <a class="house" href="#/maison/begg-x-co">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/begg-x-co.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Begg x Co <span class="go" aria-hidden="true">→</span></h4>
+        <p>Écharpes écossaises</p>
+      </a>
+      <a class="house" href="#/maison/acne-studios">
+        <span class="logo-mark logo-s"><img src="logos/64/acne-studios.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Acne Studios <span class="go" aria-hidden="true">→</span></h4>
+        <p>Écharpes oversize en laine, prix mode</p>
+      </a>
+      <a class="house" href="#/maison/barbour">
+        <span class="logo-mark logo-s"><img src="logos/64/barbour.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Barbour <span class="go" aria-hidden="true">→</span></h4>
+        <p>Écharpes en lambswool</p>
+      </a>
+      <a class="house" href="#/maison/kujten">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/kujten.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Kujten <span class="go" aria-hidden="true">→</span></h4>
+        <p>Écharpes en cachemire</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Alpaga</h3>
-              <div>
-                <p>Plus chaud que la laine, doux et peu irritant.</p>
-                <a class="mat-link" href="#/matiere/alpaga">Fiche matière : Alpaga<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/tommy-hilfiger">
+        <span class="logo-mark logo-s"><img src="logos/64/tommy-hilfiger.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Tommy Hilfiger <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prime logo</p>
+      </a>
+      <a class="house" href="#/maison/calvin-klein">
+        <span class="logo-mark logo-s"><img src="logos/64/calvin-klein.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Calvin Klein <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prime logo</p>
+      </a>
+      <a class="house" href="#/maison/ralph-lauren">
+        <span class="logo-mark logo-s"><img src="logos/64/ralph-lauren.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Ralph Lauren <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Cuir d'agneau (gants)</h3>
-              <div>
-                <p>Souple et fin, il garde la dextérité des doigts.</p>
-                <a class="mat-link" href="#/matiere/agneau">Fiche matière : Agneau<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Doublure cachemire ou soie</h3>
-              <div>
-                <p>Ajoute de la chaleur sans épaissir le gant.</p>
-                <a class="mat-link" href="#/matiere/cachemire">Fiche matière : Cachemire<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Acrylique : gratte, peu chaud, bouloche.</li><li>Gants en simili qui craquent au froid.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Lavez la laine à la main à l'eau froide avec une lessive douce.</li><li>Rangez avec du cèdre pour éloigner les mites.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode</h4><p>Acrylique cher</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -184,6 +270,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/echarpe";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

@@ -61,79 +61,141 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Agneau pleine fleur</h3>
-              <div>
-                <p>Très souple et léger, agréable dès le premier port. Plus fragile aux frottements que la vachette.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 200 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">200 – 700 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 700 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Vachette ou veau pleine fleur</h3>
-              <div>
-                <p>Plus épais et plus résistant : il demande un temps de « rodage » mais dure des décennies.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/schott-nyc">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/schott-nyc.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Schott NYC <span class="go" aria-hidden="true">→</span></h4>
+        <p>Le Perfecto original, robuste et iconique</p>
+      </a>
+      <a class="house" href="#/maison/belstaff">
+        <span class="logo-mark logo-s"><img src="logos/64/belstaff.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Belstaff <span class="go" aria-hidden="true">→</span></h4>
+        <p>Vestes moto anglaises (gamme héritage)</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Cuir de cheval</h3>
-              <div>
-                <p>Dense et très résistant, avec une patine profonde. Utilisé par les fabricants de vestes « heritage ».</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/serge-pariente">
+        <span class="logo-mark logo-s"><img src="logos/64/serge-pariente.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Serge Pariente <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir français de qualité</p>
+      </a>
+      <a class="house" href="#/maison/arket">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">A</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Arket <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir correct</p>
+      </a>
+      <a class="house" href="#/maison/sezane">
+        <span class="logo-mark logo-s"><img src="logos/64/sezane.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sézane <span class="go" aria-hidden="true">→</span></h4>
+        <p>Vestes féminines en cuir réussies</p>
+      </a>
+      <a class="house" href="#/maison/gimo-s">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">GS</span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Gimo's <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir italien souple</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Daim (suède)</h3>
-              <div>
-                <p>Cuir poncé côté chair, très doux. À protéger de la pluie avec un spray imperméabilisant.</p>
-                <a class="mat-link" href="#/matiere/daim-suede">Fiche matière : Daim (suède)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/the-kooples">
+        <span class="logo-mark logo-s"><img src="logos/64/the-kooples.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>The Kooples <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir souvent correct mais prix mode</p>
+      </a>
+      <a class="house" href="#/maison/maje">
+        <span class="logo-mark logo-s"><img src="logos/64/maje.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Maje <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir correct, cher</p>
+      </a>
+      <a class="house" href="#/maison/sandro">
+        <span class="logo-mark logo-s"><img src="logos/64/sandro.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sandro <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir correct, cher</p>
+      </a>
+      <a class="house" href="#/maison/zadig-voltaire">
+        <span class="logo-mark logo-s"><img src="logos/64/zadig-voltaire.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Zadig &amp; Voltaire <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir correct, cher</p>
+      </a>
+      <a class="house" href="#/maison/ikks">
+        <span class="logo-mark logo-s"><img src="logos/64/ikks.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>IKKS <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Tannage végétal</h3>
-              <div>
-                <p>Tannage aux extraits d'écorces : plus lent et plus naturel, il donne un cuir qui fonce et se patine. Le tannage au chrome, plus courant, donne un cuir souple et stable.</p>
-                <a class="mat-link" href="#/matiere/cuir-tanne-vegetal">Fiche matière : Cuir tanné végétal<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Peau lainée (shearling)</h3>
-              <div>
-                <p>Peau de mouton conservée avec sa laine : la veste la plus chaude qui soit.</p>
-                <a class="mat-link" href="#/matiere/peau-lainee-shearling">Fiche matière : Peau lainée (shearling)<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Simili-cuir (PU, PVC) : pèle et craquelle, ne respire pas.</li><li>« Cuir véritable » sans autre précision : souvent un cuir croûte enduit de mauvaise qualité.</li><li>Cuirs très brillants et uniformes : souvent corrigés avec une couche plastique.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Nourrissez le cuir une ou deux fois par an avec une crème adaptée.</li><li>Suspendez la veste sur un cintre large, loin du soleil et des radiateurs.</li><li>Les bras doivent pouvoir bouger : une veste en cuir ne s'élargit pas aux épaules.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode au simili</h4><p>À éviter</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -184,6 +246,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/cuir";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

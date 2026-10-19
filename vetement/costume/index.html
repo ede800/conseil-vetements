@@ -61,87 +61,183 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Laine vierge Super 100's – 130's</h3>
-              <div>
-                <p>Le chiffre « Super » indique la finesse de la fibre. Entre 100 et 130, la laine est fine, tombe bien et résiste à l'usage quotidien. Au-delà de 150, elle devient soyeuse mais fragile.</p>
-                <a class="mat-link" href="#/matiere/laine">Fiche matière : Laine<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 250 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">250 – 900 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 900 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Flanelle de laine</h3>
-              <div>
-                <p>Douce, chaude et mate : idéale en automne-hiver, très élégante en gris.</p>
-                <a class="mat-link" href="#/matiere/flanelle">Fiche matière : Flanelle<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/suitsupply">
+        <span class="logo-mark logo-s"><img src="logos/64/suitsupply.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Pays-Bas</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Suitsupply <span class="go" aria-hidden="true">→</span></h4>
+        <p>Rapport qualité-prix imbattable : laine italienne et entoilage</p>
+      </a>
+      <a class="house" href="#/maison/bonnegueule">
+        <span class="logo-mark logo-s"><img src="logos/64/bonnegueule.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>BonneGueule <span class="go" aria-hidden="true">→</span></h4>
+        <p>Vestes bien construites en belles laines</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Tweed</h3>
-              <div>
-                <p>Laine épaisse et robuste, souvent écossaise : pour un blazer décontracté de campagne ou d'hiver.</p>
-                <a class="mat-link" href="#/matiere/tweed">Fiche matière : Tweed<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/hockerty">
+        <span class="logo-mark logo-s"><img src="logos/64/hockerty.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Hockerty <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sur-mesure en ligne accessible</p>
+      </a>
+      <a class="house" href="#/maison/hackett">
+        <span class="logo-mark logo-s"><img src="logos/64/hackett.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Hackett <span class="go" aria-hidden="true">→</span></h4>
+        <p>Classiques anglais</p>
+      </a>
+      <a class="house" href="#/maison/massimo-dutti">
+        <span class="logo-mark logo-s"><img src="logos/64/massimo-dutti.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Massimo Dutti <span class="go" aria-hidden="true">→</span></h4>
+        <p>Gamme laine correcte</p>
+      </a>
+      <a class="house" href="#/maison/faubourg-saint-sulpice">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">FS</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Faubourg Saint Sulpice <span class="go" aria-hidden="true">→</span></h4>
+        <p>Demi-mesure parisienne</p>
+      </a>
+      <a class="house" href="#/maison/atelier-private">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">AP</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Atelier Private <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sur-mesure accessible</p>
+      </a>
+      <a class="house" href="#/maison/arket">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">A</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Arket <span class="go" aria-hidden="true">→</span></h4>
+        <p>Blazers sobres</p>
+      </a>
+      <a class="house" href="#/maison/sezane">
+        <span class="logo-mark logo-s"><img src="logos/64/sezane.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sézane <span class="go" aria-hidden="true">→</span></h4>
+        <p>Blazers féminins réussis</p>
+      </a>
+      <a class="house" href="#/maison/tagliatore">
+        <span class="logo-mark logo-s"><img src="logos/64/tagliatore.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Tagliatore <span class="go" aria-hidden="true">→</span></h4>
+        <p>Vestes italiennes au style affirmé</p>
+      </a>
+      <a class="house" href="#/maison/brooks-brothers">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">BB</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Brooks Brothers <span class="go" aria-hidden="true">→</span></h4>
+        <p>Costumes classiques américains</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Fresco / laine haute torsion</h3>
-              <div>
-                <p>Tissage aéré en fils très tordus : la laine respire et ne froisse presque pas. Le costume d'été idéal.</p>
-                <a class="mat-link" href="#/matiere/laine">Fiche matière : Laine<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/hugo-boss">
+        <span class="logo-mark logo-s"><img src="logos/64/hugo-boss.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Hugo Boss <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct mais souvent thermocollé</p>
+      </a>
+      <a class="house" href="#/maison/de-fursac">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/de-fursac.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>De Fursac <span class="go" aria-hidden="true">→</span></h4>
+        <p>Style, prix élevé</p>
+      </a>
+      <a class="house" href="#/maison/sandro">
+        <span class="logo-mark logo-s"><img src="logos/64/sandro.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sandro <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mode, matières moyennes</p>
+      </a>
+      <a class="house" href="#/maison/ralph-lauren">
+        <span class="logo-mark logo-s"><img src="logos/64/ralph-lauren.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Ralph Lauren <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/tommy-hilfiger">
+        <span class="logo-mark logo-s"><img src="logos/64/tommy-hilfiger.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Tommy Hilfiger <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prime de marque</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Lin, coton ou soie mélangés</h3>
-              <div>
-                <p>Pour les blazers d'été décontractés : très frais, froissent de manière naturelle.</p>
-                <a class="mat-link" href="#/matiere/coton">Fiche matière : Coton<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Entoilage (semi ou complet)</h3>
-              <div>
-                <p>Une toile de crin ou de laine cousue dans le devant donne forme et tombé, et s'adapte au corps. Une veste entoilée dure beaucoup plus longtemps.</p>
-                
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">07</span>
-              <h3>Doublure en cupro (Bemberg) ou viscose</h3>
-              <div>
-                <p>Respirante et glissante, contrairement au polyester qui fait transpirer.</p>
-                <a class="mat-link" href="#/matiere/cupro">Fiche matière : Cupro<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Polyester ou mélanges polyester : brille, chauffe, se froisse.</li><li>Thermocollage bas de gamme : des bulles apparaissent après pressing.</li><li>Laine Super 180's+ pour un usage quotidien : trop fragile.</li><li>Fausses boutonnières aux manches et coutures très visibles : signe d'une confection économique.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Le test de l'entoilage : pincez le devant de la veste sous la boutonnière ; si vous sentez une troisième couche qui bouge librement, elle est entoilée.</li><li>Prévoyez un budget retouche (manches, ourlet, taille) : c'est ce qui rend un costume parfait.</li><li>Ne passez pas au pressing trop souvent : brossez, aérez et suspendez sur un cintre large.</li></ul>
-          </div>
+              <div class="houses">
+      <a class="house" href="#/maison/the-kooples">
+        <span class="logo-mark logo-s"><img src="logos/64/the-kooples.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>The Kooples <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prix mode pour des matières moyennes</p>
+      </a>
+      <a class="house" href="#/maison/zadig-voltaire">
+        <span class="logo-mark logo-s"><img src="logos/64/zadig-voltaire.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Zadig &amp; Voltaire <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prix mode</p>
+      </a></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -192,6 +288,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/costume";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

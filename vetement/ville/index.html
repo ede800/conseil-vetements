@@ -61,79 +61,171 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Box-calf (veau pleine fleur)</h3>
-              <div>
-                <p>Cuir de veau dense et lisse qui se cire, se patine et dure des décennies.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 150 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">150 – 450 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 450 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Cordovan</h3>
-              <div>
-                <p>Cuir issu d'une membrane de la croupe du cheval : extrêmement dense, il ne se plisse pas mais « roule ». Rare et cher.</p>
-                <a class="mat-link" href="#/matiere/cordovan">Fiche matière : Cordovan<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/bexley">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">B</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Bexley <span class="go" aria-hidden="true">→</span></h4>
+        <p>Goodyear à prix imbattable</p>
+      </a>
+      <a class="house" href="#/maison/loake">
+        <span class="logo-mark logo-s"><img src="logos/64/loake.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Loake <span class="go" aria-hidden="true">→</span></h4>
+        <p>Fabrication anglaise de qualité</p>
+      </a>
+      <a class="house" href="#/maison/meermin">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">M</span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Meermin <span class="go" aria-hidden="true">→</span></h4>
+        <p>Excellent rapport qualité-prix espagnol</p>
+      </a>
+      <a class="house" href="#/maison/finsbury">
+        <span class="logo-mark logo-s"><img src="logos/64/finsbury.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Finsbury <span class="go" aria-hidden="true">→</span></h4>
+        <p>Goodyear français à prix doux</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Daim</h3>
-              <div>
-                <p>Plus décontracté, étonnamment résistant avec un bon imperméabilisant.</p>
-                <a class="mat-link" href="#/matiere/daim-suede">Fiche matière : Daim (suède)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/allen-edmonds">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/allen-edmonds.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Allen Edmonds <span class="go" aria-hidden="true">→</span></h4>
+        <p>Classiques américains</p>
+      </a>
+      <a class="house" href="#/maison/jacques-demeter">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">JD</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Jacques &amp; Déméter <span class="go" aria-hidden="true">→</span></h4>
+        <p>Goodyear français accessible</p>
+      </a>
+      <a class="house" href="#/maison/septieme-largeur">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">SL</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Septième Largeur <span class="go" aria-hidden="true">→</span></h4>
+        <p>Large choix de couleurs</p>
+      </a>
+      <a class="house" href="#/maison/barker">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">B</span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Barker <span class="go" aria-hidden="true">→</span></h4>
+        <p>Fabrication anglaise</p>
+      </a>
+      <a class="house" href="#/maison/sebago">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/sebago.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sebago <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mocassins solides</p>
+      </a>
+      <a class="house" href="#/maison/heschung">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/heschung.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Heschung <span class="go" aria-hidden="true">→</span></h4>
+        <p>Fabrication alsacienne</p>
+      </a>
+      <a class="house" href="#/maison/grenson">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">G</span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Grenson <span class="go" aria-hidden="true">→</span></h4>
+        <p>Anglais, stylés</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Montage Goodyear</h3>
-              <div>
-                <p>La tige est cousue à une trépointe, elle-même cousue à la semelle : très solide, imperméable et ressemelable plusieurs fois.</p>
-                
+              <div class="houses">
+      <a class="house" href="#/maison/timberland">
+        <span class="logo-mark logo-s"><img src="logos/64/timberland.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Timberland <span class="go" aria-hidden="true">→</span></h4>
+        <p>Collé sur beaucoup de modèles</p>
+      </a>
+      <a class="house" href="#/maison/bally">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">B</span>
+        <div class="house-meta"><span>Suisse</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Bally <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct, cher</p>
+      </a>
+      <a class="house" href="#/maison/lloyd">
+        <span class="logo-mark logo-s"><img src="logos/64/lloyd.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Lloyd <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/ecco">
+        <span class="logo-mark logo-s"><img src="logos/64/ecco.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Danemark</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Ecco <span class="go" aria-hidden="true">→</span></h4>
+        <p>Confortable, mais collé</p>
+      </a>
+      <a class="house" href="#/maison/geox">
+        <span class="logo-mark logo-s"><img src="logos/64/geox.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Geox <span class="go" aria-hidden="true">→</span></h4>
+        <p>Confort, semelles collées</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Montage Blake</h3>
-              <div>
-                <p>Une couture traverse directement semelle et tige : plus fin et souple que le Goodyear, ressemelable aussi.</p>
-                
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Semelle gomme (Dainite, Vibram)</h3>
-              <div>
-                <p>Accroche sous la pluie tout en restant élégante.</p>
-                
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Semelle simplement collée : impossible à réparer correctement.</li><li>Cuir « corrigé » très brillant et plastique : il craquelle aux plis.</li><li>Cuir synthétique.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Mettez des embauchoirs en cèdre après chaque port.</li><li>Ne portez pas la même paire deux jours de suite : le cuir doit sécher.</li><li>Faites ressemeler avant que la trépointe ou la première semelle ne soit abîmée.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode</h4><p>Souvent collées malgré le prix</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -184,6 +276,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/ville";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

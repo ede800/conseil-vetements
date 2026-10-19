@@ -61,71 +61,147 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Drap de laine</h3>
-              <div>
-                <p>Tient chaud, coupe le vent et reste chaud même humide. Une surchemise en laine remplace un pull et une veste à la fois.</p>
-                <a class="mat-link" href="#/matiere/laine">Fiche matière : Laine<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 50 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">50 – 160 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 160 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Velours côtelé épais</h3>
-              <div>
-                <p>Coton à côtes en relief : chaud, doux et très résistant. Plus les côtes sont larges, plus c'est décontracté.</p>
-                <a class="mat-link" href="#/matiere/velours-cotele">Fiche matière : Velours côtelé<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/bonnegueule">
+        <span class="logo-mark logo-s"><img src="logos/64/bonnegueule.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>BonneGueule <span class="go" aria-hidden="true">→</span></h4>
+        <p>Surchemises en laine et moleskine très bien construites</p>
+      </a>
+      <a class="house" href="#/maison/le-laboureur">
+        <span class="logo-mark logo-s"><img src="logos/64/le-laboureur.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Le Laboureur <span class="go" aria-hidden="true">→</span></h4>
+        <p>Vestes de travail françaises authentiques</p>
+      </a>
+      <a class="house" href="#/maison/arpenteur">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/arpenteur.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Arpenteur <span class="go" aria-hidden="true">→</span></h4>
+        <p>Vestes de travail françaises très bien faites</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Toile de coton (canvas, moleskine)</h3>
-              <div>
-                <p>Coton très dense, héritier des vestes de travail. Coupe le vent, se patine avec le temps.</p>
-                <a class="mat-link" href="#/matiere/moleskine">Fiche matière : Moleskine<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/vetra">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/vetra.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Vetra <span class="go" aria-hidden="true">→</span></h4>
+        <p>Veste de travail française historique</p>
+      </a>
+      <a class="house" href="#/maison/arket">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">A</span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Arket <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bonne laine</p>
+      </a>
+      <a class="house" href="#/maison/carhartt-wip">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/carhartt-wip.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>États-Unis / Allemagne</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Carhartt WIP <span class="go" aria-hidden="true">→</span></h4>
+        <p>Toile robuste, style workwear</p>
+      </a>
+      <a class="house" href="#/maison/portuguese-flannel">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">PF</span>
+        <div class="house-meta"><span>Portugal</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Portuguese Flannel <span class="go" aria-hidden="true">→</span></h4>
+        <p>Flanelles portugaises de grande qualité</p>
+      </a>
+      <a class="house" href="#/maison/asket">
+        <span class="logo-mark logo-s"><img src="logos/64/asket.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Asket <span class="go" aria-hidden="true">→</span></h4>
+        <p>Laine traçable</p>
+      </a>
+      <a class="house" href="#/maison/faguo">
+        <span class="logo-mark logo-s"><img src="logos/64/faguo.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Faguo <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bon rapport qualité-prix</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Flanelle épaisse</h3>
-              <div>
-                <p>Coton ou laine brossée, gonflante et douce : confort maximal.</p>
-                <a class="mat-link" href="#/matiere/flanelle">Fiche matière : Flanelle<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/massimo-dutti">
+        <span class="logo-mark logo-s"><img src="logos/64/massimo-dutti.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Massimo Dutti <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct, variable</p>
+      </a>
+      <a class="house" href="#/maison/levi-s">
+        <span class="logo-mark logo-s"><img src="logos/64/levi-s.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Levi's <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct en denim</p>
+      </a>
+      <a class="house" href="#/maison/dickies">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/dickies.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Dickies <span class="go" aria-hidden="true">→</span></h4>
+        <p>Solide mais coupes larges</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Denim épais</h3>
-              <div>
-                <p>Robuste, se patine comme un jean. Une alternative à la veste en jean.</p>
-                <a class="mat-link" href="#/matiere/denim">Fiche matière : Denim<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Laine mélangée à moins de 50 % : bouloche et tient peu chaud.</li><li>Polyester « effet laine » : boulochage et électricité statique.</li><li>Coton trop fin : ce n'est plus une surchemise mais une chemise.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Prenez une taille qui permet de porter un pull fin dessous.</li><li>Brossez la laine plutôt que de la laver souvent.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode à logo</h4><p>Prix élevé, matières moyennes</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -176,6 +252,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/surchemise";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

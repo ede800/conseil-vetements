@@ -61,79 +61,171 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Cuir graissé / chromexcel</h3>
-              <div>
-                <p>Cuir imprégné d'huiles et de graisses : il repousse l'eau, se patine et cicatrise des petites rayures.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 150 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">150 – 400 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 400 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Cuir pleine fleur épais</h3>
-              <div>
-                <p>Robuste et protecteur, il se forme au pied.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/red-wing">
+        <span class="logo-mark logo-s"><img src="logos/64/red-wing.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Red Wing <span class="go" aria-hidden="true">→</span></h4>
+        <p>Boots de travail légendaires</p>
+      </a>
+      <a class="house" href="#/maison/blundstone">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/blundstone.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Australie</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Blundstone <span class="go" aria-hidden="true">→</span></h4>
+        <p>Chelsea australiennes increvables</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Daim huilé (roughout)</h3>
-              <div>
-                <p>Cuir retourné très résistant, typique des boots militaires.</p>
-                <a class="mat-link" href="#/matiere/daim-suede">Fiche matière : Daim (suède)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/r-m-williams">
+        <span class="logo-mark logo-s"><img src="logos/64/r-m-williams.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Australie</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>R.M. Williams <span class="go" aria-hidden="true">→</span></h4>
+        <p>Chelsea cousues main</p>
+      </a>
+      <a class="house" href="#/maison/thursday-boots">
+        <span class="logo-mark logo-s"><img src="logos/64/thursday-boots.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Thursday Boots <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bon rapport qualité-prix</p>
+      </a>
+      <a class="house" href="#/maison/dr-martens">
+        <span class="logo-mark logo-s"><img src="logos/64/dr-martens.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Dr. Martens (Made in England) <span class="go" aria-hidden="true">→</span></h4>
+        <p>Plus solides que la gamme standard</p>
+      </a>
+      <a class="house" href="#/maison/bexley">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">B</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Bexley <span class="go" aria-hidden="true">→</span></h4>
+        <p>Boots Goodyear abordables</p>
+      </a>
+      <a class="house" href="#/maison/le-chameau">
+        <span class="logo-mark logo-s"><img src="logos/64/le-chameau.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Le Chameau <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bottes en caoutchouc fait main</p>
+      </a>
+      <a class="house" href="#/maison/ugg">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">U</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>UGG <span class="go" aria-hidden="true">→</span></h4>
+        <p>Peau lainée confortable</p>
+      </a>
+      <a class="house" href="#/maison/meindl">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">M</span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Meindl <span class="go" aria-hidden="true">→</span></h4>
+        <p>Randonnée de qualité</p>
+      </a>
+      <a class="house" href="#/maison/lowa">
+        <span class="logo-mark logo-s"><img src="logos/64/lowa.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Lowa <span class="go" aria-hidden="true">→</span></h4>
+        <p>Randonnée solide</p>
+      </a>
+      <a class="house" href="#/maison/merrell">
+        <span class="logo-mark logo-s"><img src="logos/64/merrell.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Merrell <span class="go" aria-hidden="true">→</span></h4>
+        <p>Chaussures de randonnée confortables</p>
+      </a>
+      <a class="house" href="#/maison/keen">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/keen.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Keen <span class="go" aria-hidden="true">→</span></h4>
+        <p>Robustes pour la randonnée</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Montage norvégien</h3>
-              <div>
-                <p>Couture apparente sur le côté : étanche et robuste, typique des chaussures de montagne.</p>
-                
+              <div class="houses">
+      <a class="house" href="#/maison/timberland">
+        <span class="logo-mark logo-s"><img src="logos/64/timberland.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Timberland <span class="go" aria-hidden="true">→</span></h4>
+        <p>Collé sur beaucoup de modèles</p>
+      </a>
+      <a class="house" href="#/maison/sorel">
+        <span class="logo-mark logo-s"><img src="logos/64/sorel.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Canada</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Sorel <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/hunter">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/hunter.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Hunter <span class="go" aria-hidden="true">→</span></h4>
+        <p>Qualité en baisse</p>
+      </a>
+      <a class="house" href="#/maison/pataugas">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/pataugas.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Pataugas <span class="go" aria-hidden="true">→</span></h4>
+        <p>Classique français, collé</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Caoutchouc naturel (bottes de pluie)</h3>
-              <div>
-                <p>Imperméable et souple, il dure longtemps s'il est vulcanisé à la main.</p>
-                <a class="mat-link" href="#/matiere/caoutchouc-naturel">Fiche matière : Caoutchouc naturel<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Peau lainée (bottes fourrées)</h3>
-              <div>
-                <p>La laine garde le pied au chaud et absorbe l'humidité.</p>
-                <a class="mat-link" href="#/matiere/peau-lainee-shearling">Fiche matière : Peau lainée (shearling)<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Semelles collées sur des boots de travail.</li><li>Simili-cuir : craquelle au froid.</li><li>Bottes de pluie en PVC : rigides et cassantes.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Graissez vos boots avant l'hiver et après chaque exposition au sel.</li><li>Faites sécher les boots mouillées loin d'un radiateur, avec du papier journal à l'intérieur.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode</h4><p>Souvent collées</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -184,6 +276,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/boots";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

@@ -61,71 +61,177 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Polyester technique</h3>
-              <div>
-                <p>Évacue la transpiration et sèche très vite. Le standard du sport.</p>
-                <a class="mat-link" href="#/matiere/polyester">Fiche matière : Polyester<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 30 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">30 – 90 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 90 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Polyamide (nylon)</h3>
-              <div>
-                <p>Plus doux et plus résistant aux frottements que le polyester : idéal pour les leggings et les shorts.</p>
-                <a class="mat-link" href="#/matiere/polyamide-nylon">Fiche matière : Polyamide (nylon)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/asics">
+        <span class="logo-mark logo-s"><img src="logos/64/asics.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Japon</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Asics <span class="go" aria-hidden="true">→</span></h4>
+        <p>Running de qualité</p>
+      </a>
+      <a class="house" href="#/maison/patagonia">
+        <span class="logo-mark logo-s"><img src="logos/64/patagonia.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Patagonia <span class="go" aria-hidden="true">→</span></h4>
+        <p>Outdoor durable</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Élasthanne (5 – 25 %)</h3>
-              <div>
-                <p>Liberté de mouvement indispensable pour le yoga, le fitness et les collants de course.</p>
-                <a class="mat-link" href="#/matiere/elasthanne-lycra-spandex">Fiche matière : Élasthanne (Lycra, spandex)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/nike">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">N</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Nike <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bonne technologie, prix gonflés</p>
+      </a>
+      <a class="house" href="#/maison/adidas">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/adidas.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Adidas <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bonne technologie, prix gonflés</p>
+      </a>
+      <a class="house" href="#/maison/under-armour">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/under-armour.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Under Armour <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bon pour le fitness</p>
+      </a>
+      <a class="house" href="#/maison/new-balance">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/new-balance.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>New Balance <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bons vêtements de course</p>
+      </a>
+      <a class="house" href="#/maison/brooks">
+        <span class="logo-mark logo-s"><img src="logos/64/brooks.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Brooks <span class="go" aria-hidden="true">→</span></h4>
+        <p>Running fiable</p>
+      </a>
+      <a class="house" href="#/maison/salomon">
+        <span class="logo-mark logo-s"><img src="logos/64/salomon.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Salomon <span class="go" aria-hidden="true">→</span></h4>
+        <p>Trail technique</p>
+      </a>
+      <a class="house" href="#/maison/odlo">
+        <span class="logo-mark logo-s"><img src="logos/64/odlo.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suisse</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Odlo <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sous-couches de référence</p>
+      </a>
+      <a class="house" href="#/maison/icebreaker">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/icebreaker.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Nouvelle-Zélande</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Icebreaker <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mérinos</p>
+      </a>
+      <a class="house" href="#/maison/girlfriend-collective">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/girlfriend-collective.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Girlfriend Collective <span class="go" aria-hidden="true">→</span></h4>
+        <p>Leggings recyclés de qualité</p>
+      </a>
+      <a class="house" href="#/maison/craft">
+        <span class="logo-mark logo-s"><img src="logos/64/craft.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Craft <span class="go" aria-hidden="true">→</span></h4>
+        <p>Sous-couches et vêtements techniques fiables</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Laine mérinos</h3>
-              <div>
-                <p>Pour la randonnée, le ski et le trail : chaud même humide, et ne sent presque pas.</p>
-                <a class="mat-link" href="#/matiere/laine-merinos">Fiche matière : Laine mérinos<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/gymshark">
+        <span class="logo-mark logo-s"><img src="logos/64/gymshark.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Royaume-Uni</span><span><span class="sr-only">note globale </span>2,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Gymshark <span class="go" aria-hidden="true">→</span></h4>
+        <p>Surtout du marketing</p>
+      </a>
+      <a class="house" href="#/maison/reebok">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/reebok.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Reebok <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/fila">
+        <span class="logo-mark logo-s"><img src="logos/64/fila.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Fila <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/champion">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/champion.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Champion <span class="go" aria-hidden="true">→</span></h4>
+        <p>Basique</p>
+      </a>
+      <a class="house" href="#/maison/bjorn-borg">
+        <span class="logo-mark logo-s"><img src="logos/64/bjorn-borg.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Björn Borg <span class="go" aria-hidden="true">→</span></h4>
+        <p>Vêtements de sport corrects</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Mailles ajourées (mesh)</h3>
-              <div>
-                <p>Zones aérées placées là où l'on transpire le plus (dos, aisselles).</p>
-                
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Coton : il absorbe la sueur, devient lourd et froid.</li><li>Coutures épaisses : frottements et irritations.</li><li>Leggings trop fins qui deviennent transparents quand on se penche.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Lavez à 30 °C sans adoucissant : il bouche les fibres techniques.</li><li>Pour les odeurs tenaces, un peu de vinaigre blanc dans le bac.</li><li>Faites le test du squat devant un miroir pour vérifier l'opacité d'un legging.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Collections sport des marques de mode</h4><p>Peu techniques</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -176,6 +282,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/sport";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

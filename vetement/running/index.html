@@ -61,63 +61,159 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Mousses EVA</h3>
-              <div>
-                <p>Mousse classique, légère et amortissante ; elle se tasse avec le temps.</p>
-                
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 80 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">80 – 170 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 170 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Mousses PEBA / TPU (supercritiques)</h3>
-              <div>
-                <p>Mousses modernes très réactives qui renvoient l'énergie. Plus chères, souvent plus durables.</p>
-                
+              <div class="houses">
+      <a class="house" href="#/maison/asics">
+        <span class="logo-mark logo-s"><img src="logos/64/asics.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Japon</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Asics <span class="go" aria-hidden="true">→</span></h4>
+        <p>Gel-Nimbus, Novablast : fiables pour tous</p>
+      </a>
+      <a class="house" href="#/maison/brooks">
+        <span class="logo-mark logo-s"><img src="logos/64/brooks.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Brooks <span class="go" aria-hidden="true">→</span></h4>
+        <p>Ghost, Glycerin : confort constant</p>
+      </a>
+      <a class="house" href="#/maison/saucony">
+        <span class="logo-mark logo-s"><img src="logos/64/saucony.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Saucony <span class="go" aria-hidden="true">→</span></h4>
+        <p>Endorphin et Ride, excellents</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Mesh ingénierie</h3>
-              <div>
-                <p>Tige en maille respirante, renforcée là où le pied a besoin de maintien.</p>
-                
+              <div class="houses">
+      <a class="house" href="#/maison/new-balance">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/new-balance.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>New Balance <span class="go" aria-hidden="true">→</span></h4>
+        <p>Gammes Fresh Foam et FuelCell</p>
+      </a>
+      <a class="house" href="#/maison/hoka">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">H</span>
+        <div class="house-meta"><span>France / États-Unis</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Hoka <span class="go" aria-hidden="true">→</span></h4>
+        <p>Amorti maximal</p>
+      </a>
+      <a class="house" href="#/maison/nike">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">N</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Nike <span class="go" aria-hidden="true">→</span></h4>
+        <p>Pegasus fiable</p>
+      </a>
+      <a class="house" href="#/maison/adidas">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/adidas.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Adidas <span class="go" aria-hidden="true">→</span></h4>
+        <p>Adizero performant</p>
+      </a>
+      <a class="house" href="#/maison/mizuno">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/mizuno.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Japon</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Mizuno <span class="go" aria-hidden="true">→</span></h4>
+        <p>Robustes</p>
+      </a>
+      <a class="house" href="#/maison/salomon">
+        <span class="logo-mark logo-s"><img src="logos/64/salomon.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Salomon <span class="go" aria-hidden="true">→</span></h4>
+        <p>Référence du trail</p>
+      </a>
+      <a class="house" href="#/maison/altra">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/altra.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Altra <span class="go" aria-hidden="true">→</span></h4>
+        <p>Pour pieds larges</p>
+      </a>
+      <a class="house" href="#/maison/on">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/on.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>Suisse</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>On <span class="go" aria-hidden="true">→</span></h4>
+        <p>Confortable</p>
+      </a>
+      <a class="house" href="#/maison/merrell">
+        <span class="logo-mark logo-s"><img src="logos/64/merrell.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Merrell <span class="go" aria-hidden="true">→</span></h4>
+        <p>Trail confortable et robuste</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Caoutchouc carbone</h3>
-              <div>
-                <p>Semelle extérieure très résistante à l'usure sur les zones d'appui.</p>
-                <a class="mat-link" href="#/matiere/caoutchouc-naturel">Fiche matière : Caoutchouc naturel<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/puma">
+        <span class="logo-mark logo-s"><img src="logos/64/puma.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Puma <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bons modèles récents</p>
+      </a>
+      <a class="house" href="#/maison/under-armour">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/under-armour.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Under Armour <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Choisir une paire pour son look ou sur la seule réputation.</li><li>Chaussures de mode « running » pour courir : peu d'amorti.</li><li>Courir avec une paire usée : risque de blessure.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Faites analyser votre foulée en magasin spécialisé si vous débutez.</li><li>Alternez deux paires : la mousse a le temps de reprendre sa forme.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Modèles mode</h4><p>Pas faits pour courir</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -168,6 +264,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/running";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

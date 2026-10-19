@@ -61,79 +61,171 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Fil d'Écosse (coton mercerisé)</h3>
-              <div>
-                <p>Coton longues fibres traité pour être brillant, lisse et très résistant : la chaussette de ville élégante.</p>
-                <a class="mat-link" href="#/matiere/fil-d-ecosse">Fiche matière : Fil d'Écosse<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 8 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">8 – 25 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 25 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Laine mérinos</h3>
-              <div>
-                <p>Chaude, anti-odeurs, régule l'humidité : idéale en hiver et en randonnée.</p>
-                <a class="mat-link" href="#/matiere/laine-merinos">Fiche matière : Laine mérinos<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/falke">
+        <span class="logo-mark logo-s"><img src="logos/64/falke.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Falke <span class="go" aria-hidden="true">→</span></h4>
+        <p>Chaussettes et collants de référence</p>
+      </a>
+      <a class="house" href="#/maison/bleuforet">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/bleuforet.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Bleuforêt <span class="go" aria-hidden="true">→</span></h4>
+        <p>Fabrication française durable</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Coton peigné</h3>
-              <div>
-                <p>Confortable au quotidien, à choisir avec renfort.</p>
-                <a class="mat-link" href="#/matiere/coton">Fiche matière : Coton<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/darn-tough">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/darn-tough.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>4,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Darn Tough <span class="go" aria-hidden="true">→</span></h4>
+        <p>Chaussettes de randonnée garanties à vie</p>
+      </a>
+      <a class="house" href="#/maison/smartwool">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/smartwool.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Smartwool <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mérinos de qualité</p>
+      </a>
+      <a class="house" href="#/maison/icebreaker">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/icebreaker.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Nouvelle-Zélande</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Icebreaker <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mérinos</p>
+      </a>
+      <a class="house" href="#/maison/dore-dore">
+        <span class="logo-mark logo-s"><img src="logos/64/dore-dore.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Doré Doré <span class="go" aria-hidden="true">→</span></h4>
+        <p>Fabrication française</p>
+      </a>
+      <a class="house" href="#/maison/burlington">
+        <span class="logo-mark logo-s"><img src="logos/64/burlington.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Burlington <span class="go" aria-hidden="true">→</span></h4>
+        <p>Classiques solides</p>
+      </a>
+      <a class="house" href="#/maison/archiduchesse">
+        <span class="logo-mark logo-s"><img src="logos/64/archiduchesse.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Archiduchesse <span class="go" aria-hidden="true">→</span></h4>
+        <p>Made in France coloré</p>
+      </a>
+      <a class="house" href="#/maison/le-slip-francais">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/le-slip-francais.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Le Slip Français <span class="go" aria-hidden="true">→</span></h4>
+        <p>Made in France</p>
+      </a>
+      <a class="house" href="#/maison/mes-chaussettes-rouges">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">MC</span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Mes Chaussettes Rouges <span class="go" aria-hidden="true">→</span></h4>
+        <p>Chaussettes d'élégance</p>
+      </a>
+      <a class="house" href="#/maison/swedish-stockings">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/swedish-stockings.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Swedish Stockings <span class="go" aria-hidden="true">→</span></h4>
+        <p>Collants recyclés</p>
+      </a>
+      <a class="house" href="#/maison/bombas">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/bombas.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Bombas <span class="go" aria-hidden="true">→</span></h4>
+        <p>Très confortables, une paire donnée pour une achetée</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Polyamide (renfort)</h3>
-              <div>
-                <p>Un peu de nylon au talon et à la pointe multiplie la durée de vie.</p>
-                <a class="mat-link" href="#/matiere/polyamide-nylon">Fiche matière : Polyamide (nylon)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/happy-socks">
+        <span class="logo-mark logo-s"><img src="logos/64/happy-socks.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Happy Socks <span class="go" aria-hidden="true">→</span></h4>
+        <p>Joli, durée moyenne</p>
+      </a>
+      <a class="house" href="#/maison/stance">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/stance.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Stance <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct, prix élevé</p>
+      </a>
+      <a class="house" href="#/maison/calvin-klein">
+        <span class="logo-mark logo-s"><img src="logos/64/calvin-klein.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Calvin Klein <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prime logo</p>
+      </a>
+      <a class="house" href="#/maison/tommy-hilfiger">
+        <span class="logo-mark logo-s"><img src="logos/64/tommy-hilfiger.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Tommy Hilfiger <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prime logo</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Cachemire</h3>
-              <div>
-                <p>Luxe ultime pour l'hiver, mais fragile.</p>
-                <a class="mat-link" href="#/matiere/cachemire">Fiche matière : Cachemire<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Polyamide + élasthanne (collants)</h3>
-              <div>
-                <p>Les collants sont forcément synthétiques ; plus le denier est élevé, plus ils sont opaques et solides.</p>
-                <a class="mat-link" href="#/matiere/elasthanne-lycra-spandex">Fiche matière : Élasthanne (Lycra, spandex)<span aria-hidden="true"> →</span></a>
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Polyester majoritaire : pieds qui transpirent et odeurs.</li><li>Chaussettes sans renfort : trouées en quelques semaines.</li><li>Collants très fins pour un usage quotidien : filent immédiatement.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Retournez les chaussettes avant lavage, et lavez à 40 °C maximum.</li><li>Les chaussettes « remaillées à la main » (sans couture à la pointe) sont plus confortables.</li><li>Lavez les collants dans un filet.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Marques mode</h4><p>Prix du logo</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -184,6 +276,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/chaussettes";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>

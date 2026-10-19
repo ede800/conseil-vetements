@@ -61,79 +61,183 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Contenu de la fiche">
-      <button class="tab active" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
-      <button class="tab" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab active" id="tab-marques" data-tab="marques" role="tab" aria-controls="panel" aria-selected="true" tabindex="0"><span class="roman" aria-hidden="true">I.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9l1.5-5h15L21 9"></path><path d="M3 9c0 1.4 1 2.5 2.25 2.5S7.5 10.4 7.5 9c0 1.4 1 2.5 2.25 2.5S12 10.4 12 9c0 1.4 1 2.5 2.25 2.5S16.5 10.4 16.5 9c0 1.4 1 2.5 2.25 2.5S21 10.4 21 9"></path><path d="M5 11.5V20h14v-8.5M10 20v-5h4v5"></path></svg>Les maisons</button>
+      <button class="tab" id="tab-matieres" data-tab="matieres" role="tab" aria-controls="panel" aria-selected="false" tabindex="-1"><span class="roman" aria-hidden="true">II.</span><svg class="tab-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M8 3v18M16 3v18"></path><path d="M8 7l8 2M8 11l8 2M8 15l8 2"></path><path d="M16 17c2 0 3.5 1 4 2.5"></path></svg>Les matières</button>
     </div>
-    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-matieres">
+    <section class="section"><div class="container" id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-marques">
       <div class="tab-panel">
         
     <div class="section-head in">
-      <div class="label">Chapitre I</div>
-      <h2>Quelles <em>matières</em> choisir ?</h2>
+      <div class="label">Chapitre II</div>
+      <h2>Les <em>maisons</em> de référence</h2>
       <span class="ornament" aria-hidden="true"></span>
     </div>
-        <ol class="mat-list">
+        <p class="hint">Choisissez votre budget, puis cliquez sur une maison pour découvrir sa fiche détaillée.</p>
+        <div class="budget-switch" role="group" aria-label="Budget">
           
-            <li class="mat-row in">
-              <span class="num">01</span>
-              <h3>Cuir pleine fleur</h3>
-              <div>
-                <p>La couche supérieure de la peau, intacte : respirante, résistante et qui se patine au lieu de craqueler.</p>
-                <a class="mat-link" href="#/matiere/cuir-pleine-fleur">Fiche matière : Cuir pleine fleur<span aria-hidden="true"> →</span></a>
+            <button class="budget-btn " data-budget="petit" aria-pressed="false">
+              <span class="b-name">Petit budget</span>
+              <span class="b-price">&lt; 80 €</span>
+            </button>
+            <button class="budget-btn active" data-budget="moyen" aria-pressed="true">
+              <span class="b-name">Budget moyen</span>
+              <span class="b-price">80 – 220 €</span>
+            </button>
+            <button class="budget-btn " data-budget="premium" aria-pressed="false">
+              <span class="b-name">Haut de gamme</span>
+              <span class="b-price">&gt; 220 €</span>
+            </button>
+        </div>
+        <div class="tierlist">
+          
+            <div class="tier tier-S in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">S</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang S : </span>Excellence</h3>
+                  <div class="tier-sub">Le meilleur choix dans ce budget</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">02</span>
-              <h3>Daim / suède</h3>
-              <div>
-                <p>Doux et élégant, mais à protéger avec un spray imperméabilisant.</p>
-                <a class="mat-link" href="#/matiere/daim-suede">Fiche matière : Daim (suède)<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/veja">
+        <span class="logo-mark logo-s"><img src="logos/64/veja.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>4,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Veja <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir et caoutchouc sourcés de façon responsable</p>
+      </a>
+      <a class="house" href="#/maison/new-balance">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/new-balance.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>New Balance <span class="go" aria-hidden="true">→</span></h4>
+        <p>Confort et qualité, surtout les modèles Made in UK/USA</p>
+      </a></div>
+            </div>
+            <div class="tier tier-A in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">A</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang A : </span>Recommandé</h3>
+                  <div class="tier-sub">Excellent, recommandé sans hésiter</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">03</span>
-              <h3>Toile de coton épaisse</h3>
-              <div>
-                <p>Légère et respirante, idéale en été (Converse, Vans…).</p>
-                <a class="mat-link" href="#/matiere/coton">Fiche matière : Coton<span aria-hidden="true"> →</span></a>
+              <div class="houses">
+      <a class="house" href="#/maison/novesta">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">N</span>
+        <div class="house-meta"><span>Slovaquie</span><span><span class="sr-only">note globale </span>4,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Novesta <span class="go" aria-hidden="true">→</span></h4>
+        <p>Fabrication européenne, semelle vulcanisée</p>
+      </a>
+      <a class="house" href="#/maison/saucony">
+        <span class="logo-mark logo-s"><img src="logos/64/saucony.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Saucony <span class="go" aria-hidden="true">→</span></h4>
+        <p>Lifestyle confortable et solide</p>
+      </a>
+      <a class="house" href="#/maison/asics">
+        <span class="logo-mark logo-s"><img src="logos/64/asics.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Japon</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Asics <span class="go" aria-hidden="true">→</span></h4>
+        <p>Lifestyle confortable</p>
+      </a>
+      <a class="house" href="#/maison/spalwart">
+        <span class="logo-mark logo-s"><img src="logos/64/spalwart.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Suède</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Spalwart <span class="go" aria-hidden="true">→</span></h4>
+        <p>Design minimaliste</p>
+      </a>
+      <a class="house" href="#/maison/diadora">
+        <span class="logo-mark logo-s"><img src="logos/64/diadora.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Italie</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Diadora <span class="go" aria-hidden="true">→</span></h4>
+        <p>Gamme Heritage fabriquée en Italie</p>
+      </a>
+      <a class="house" href="#/maison/karhu">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/karhu.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Finlande</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Karhu <span class="go" aria-hidden="true">→</span></h4>
+        <p>Classiques finlandais</p>
+      </a>
+      <a class="house" href="#/maison/autry">
+        <span class="logo-mark logo-s"><img src="logos/64/autry.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Autry <span class="go" aria-hidden="true">→</span></h4>
+        <p>Cuir de qualité</p>
+      </a>
+      <a class="house" href="#/maison/philippe-model">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/philippe-model.webp" alt="" loading="lazy" decoding="async" width="48" height="48"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Philippe Model <span class="go" aria-hidden="true">→</span></h4>
+        <p>Bien fabriquées</p>
+      </a>
+      <a class="house" href="#/maison/victoria">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/victoria.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>3,4<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Victoria <span class="go" aria-hidden="true">→</span></h4>
+        <p>Toile espagnole abordable</p>
+      </a>
+      <a class="house" href="#/maison/onitsuka-tiger">
+        <span class="logo-mark logo-s logo-petit"><img src="logos/64/onitsuka-tiger.webp" alt="" loading="lazy" decoding="async" width="32" height="32"></span>
+        <div class="house-meta"><span>Japon</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Onitsuka Tiger <span class="go" aria-hidden="true">→</span></h4>
+        <p>Mexico 66, classique élégant</p>
+      </a></div>
+            </div>
+            <div class="tier tier-B in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">B</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang B : </span>Honorable</h3>
+                  <div class="tier-sub">Correct, avec quelques compromis</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">04</span>
-              <h3>Semelle « cup sole » cousue</h3>
-              <div>
-                <p>Semelle en forme de bac, cousue tout autour de la tige : plus durable et parfois remplaçable.</p>
-                
+              <div class="houses">
+      <a class="house" href="#/maison/nike">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">N</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Nike <span class="go" aria-hidden="true">→</span></h4>
+        <p>Excellent marketing, qualité variable</p>
+      </a>
+      <a class="house" href="#/maison/nike">
+        <span class="logo-mark logo-s monogramme" aria-hidden="true">N</span>
+        <div class="house-meta"><span>États-Unis</span><span><span class="sr-only">note globale </span>2,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Jordan <span class="go" aria-hidden="true">→</span></h4>
+        <p>Prix gonflé par la hype</p>
+      </a>
+      <a class="house" href="#/maison/puma">
+        <span class="logo-mark logo-s"><img src="logos/64/puma.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Allemagne</span><span><span class="sr-only">note globale </span>3,0<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Puma <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct</p>
+      </a>
+      <a class="house" href="#/maison/lacoste">
+        <span class="logo-mark logo-s"><img src="logos/64/lacoste.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>France</span><span><span class="sr-only">note globale </span>3,6<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Lacoste <span class="go" aria-hidden="true">→</span></h4>
+        <p>Correct, cher</p>
+      </a>
+      <a class="house" href="#/maison/camper">
+        <span class="logo-mark logo-s"><img src="logos/64/camper.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Espagne</span><span><span class="sr-only">note globale </span>3,2<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Camper <span class="go" aria-hidden="true">→</span></h4>
+        <p>Design original, semelles collées</p>
+      </a>
+      <a class="house" href="#/maison/ecco">
+        <span class="logo-mark logo-s"><img src="logos/64/ecco.webp" alt="" loading="lazy" decoding="async" width="64" height="64"></span>
+        <div class="house-meta"><span>Danemark</span><span><span class="sr-only">note globale </span>3,8<span aria-hidden="true"> / 5</span><span class="sr-only"> sur 5</span></span></div>
+        <h4>Ecco <span class="go" aria-hidden="true">→</span></h4>
+        <p>Confort, style sage</p>
+      </a></div>
+            </div>
+            <div class="tier tier-C in">
+              <div class="tier-mark">
+                <span class="tier-letter" aria-hidden="true">C</span>
+                <div>
+                  <h3 class="tier-title"><span class="sr-only">Rang C : </span>À éviter</h3>
+                  <div class="tier-sub">Décevant ou trop cher pour ce que c'est</div>
+                </div>
               </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">05</span>
-              <h3>Semelle vulcanisée</h3>
-              <div>
-                <p>Caoutchouc cuit directement sur la tige : très solide, typique des baskets en toile.</p>
-                
-              </div>
-            </li>
-            <li class="mat-row in">
-              <span class="num">06</span>
-              <h3>Mesh technique</h3>
-              <div>
-                <p>Pour le sport : léger et respirant, le synthétique est ici justifié.</p>
-                
-              </div>
-            </li>
-        </ol>
-        <div class="notes">
-          <div class="note-block avoid in">
-            <div class="label">Mises en garde</div>
-            <h3>À éviter</h3>
-            <ul><li>Cuir « reconstitué » ou croûte enduite : craquelle vite au pli.</li><li>Simili-cuir (PU) : ne respire pas, pied qui transpire.</li><li>Semelles en mousse bas de gamme qui s'écrasent.</li></ul>
-          </div>
-          <div class="note-block tips in">
-            <div class="label">Le conseil</div>
-            <h3>Astuces de connaisseur</h3>
-            <ul><li>Utilisez des embauchoirs et alternez les paires pour laisser le cuir sécher.</li><li>Nettoyez et nourrissez le cuir régulièrement ; une gomme spéciale pour le daim.</li><li>Un cordonnier peut remplacer la semelle de certaines baskets à cup sole.</li></ul>
-          </div>
+              <div class="houses"><div class="house generic"><h4>Éditions limitées revendues</h4><p>Prix spéculatif sans rapport avec la qualité</p></div></div>
+            </div>
         </div>
       </div></div></section>
     
@@ -184,6 +288,6 @@
   </footer>
 
   <script>window.PRERENDU = "#/vetement/baskets";</script>
-  <script src="site.min.js?v=e76bbb3bdc"></script>
+  <script src="site.min.js?v=4b081b55ef"></script>
 </body>
 </html>
