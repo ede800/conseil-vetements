@@ -22,5 +22,6 @@
   "data/v-sport.js",
   "data/v-chaussures.js",
   "data/v-accessoires.js",
+  "data/illustrations.js",
   "app.js"
 ]

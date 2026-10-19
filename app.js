@@ -265,6 +265,7 @@ function renderHome() {
                 <li class="index-item reveal">
                   <a href="#/vetement/${v.id}">
                     <span class="num">${num(i)}</span>
+                    ${illu(v.id, "illu-s")}
                     <span class="name">${esc(v.nom)}</span>
                     <span class="desc">${esc(v.resume)}</span>
                     <span class="arrow" aria-hidden="true">→</span>
@@ -306,7 +307,12 @@ function renderVetement(id, onglet = "matieres") {
 
   app.innerHTML = `
     <nav class="crumbs label" aria-label="Fil d'Ariane"><a href="#/">Les pièces</a> <span aria-hidden="true">&nbsp;/&nbsp;</span> ${famille(v.famille).nom} <span aria-hidden="true">&nbsp;/&nbsp;</span> <span aria-current="page">${esc(v.nom)}</span></nav>
-    ${pageHead(`${famille(v.famille).nom} · Pièce N° ${num(idx)}`, esc(v.nom), esc(v.resume))}
+    <header class="piece-head">
+      <div class="reveal">${illu(v.id, "illu-l")}</div>
+      <div class="label reveal">${famille(v.famille).nom} · Pièce N° ${num(idx)}</div>
+      <h1 class="reveal">${esc(v.nom)}</h1>
+      <p class="reveal">${esc(v.resume)}</p>
+    </header>
     <section class="essentiel-wrap">
       <div class="narrow">
         <p class="intro reveal">${esc(v.intro)}</p>
@@ -591,7 +597,7 @@ function renderMaison(s) {
           ${classements.map((c) => `
             <li class="rank-row reveal tier-${c.tier}">
               <span class="tier-letter"><span class="sr-only">Rang </span>${c.tier}</span>
-              <a href="#/vetement/${c.v.id}/maisons" class="rank-piece">${esc(c.v.nom)}${c.nom !== nom ? ` <small>(${esc(c.nom.replace(nom, "").replace(/[()]/g, "").trim() || c.nom)})</small>` : ""}</a>
+              <a href="#/vetement/${c.v.id}/maisons" class="rank-piece">${illu(c.v.id, "illu-xs")}${esc(c.v.nom)}${c.nom !== nom ? ` <small>(${esc(c.nom.replace(nom, "").replace(/[()]/g, "").trim() || c.nom)})</small>` : ""}</a>
               <span class="rank-budget">${c.budget.label} · ${esc(c.v.budgets[c.budget.id])}</span>
               <span class="rank-note">${esc(c.note)}</span>
             </li>`).join("")}
@@ -722,6 +728,7 @@ function renderMatiere(s) {
               <li class="index-item reveal">
                 <a href="#/vetement/${v.id}">
                   <span class="num">${num(VETEMENTS.indexOf(v))}</span>
+                  ${illu(v.id, "illu-s")}
                   <span class="name">${esc(v.nom)}</span>
                   <span class="desc">${esc(v.resume)}</span>
                   <span class="arrow" aria-hidden="true">→</span>

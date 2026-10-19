@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.min.css?v=81057da4ed">
+  <link rel="stylesheet" href="style.min.css?v=0aeb0862a8">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Bien Vêtu","url":"https://ede800.github.io/conseil-vetements/","inLanguage":"fr"}</script>
 </head>
 <body>
@@ -43,7 +43,460 @@
     </div>
   </header>
 
-  <main id="app" tabindex="-1"></main>
+  <main id="app" tabindex="-1">
+    <section class="hero">
+      <div class="label in">Le guide de l'élégance durable</div>
+      <h1 class=" in">Acheter mieux,<br><em>pas plus.</em></h1>
+      <p class=" in">Pour chaque pièce de votre garde-robe : les matières à privilégier, les raisons de ce choix, et les maisons qui méritent votre confiance, quel que soit votre budget.</p>
+      <button class="btn in" id="to-pieces">Découvrir les pièces</button>
+      <span class="scroll-hint" aria-hidden="true"></span>
+    </section>
+
+    <section class="stats">
+      <div class="stat in"><span>37</span>pièces décryptées</div>
+      <div class="stat in"><span>76</span>matières expliquées</div>
+      <div class="stat in"><span>447</span>maisons évaluées</div>
+      <div class="stat in"><span>3</span>niveaux de budget</div>
+    </section>
+
+    <section class="section manifesto">
+      <div class="container">
+        
+    <div class="section-head in">
+      <div class="label">Notre philosophie</div>
+      <h2>Trois principes, <em>une exigence</em></h2>
+      <span class="ornament" aria-hidden="true"></span>
+    </div>
+        <div class="pillars">
+          <div class="pillar in"><span class="num">I.</span><h3>La matière</h3><p>Tout commence par la fibre. Une belle laine, un coton à longues fibres, un cuir pleine fleur : c'est elle qui décide de la durée de vie d'un vêtement.</p></div>
+          <div class="pillar in"><span class="num">II.</span><h3>La façon</h3><p>Coutures serrées, entoilage, montage Goodyear : les détails invisibles distinguent un vêtement qui dure d'un vêtement qui se déforme.</p></div>
+          <div class="pillar in"><span class="num">III.</span><h3>Le juste prix</h3><p>Le luxe n'est pas une étiquette. Nous classons les maisons selon ce qu'elles offrent réellement, à chaque niveau de budget.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pieces">
+      <div class="container">
+        
+    <div class="section-head in">
+      <div class="label">La collection</div>
+      <h2>Les <em>pièces</em></h2>
+      <span class="ornament" aria-hidden="true"></span>
+    </div>
+        <div class="filters in" id="fam-filters" role="group" aria-label="Filtrer par famille">
+          <button class="chip active" aria-pressed="true" data-fam="">Toutes</button>
+          <button class="chip" aria-pressed="false" data-fam="hauts">Hauts</button><button class="chip" aria-pressed="false" data-fam="bas">Bas</button><button class="chip" aria-pressed="false" data-fam="robes">Robes &amp; jupes</button><button class="chip" aria-pressed="false" data-fam="vestes">Vestes &amp; manteaux</button><button class="chip" aria-pressed="false" data-fam="dessous">Dessous &amp; nuit</button><button class="chip" aria-pressed="false" data-fam="sport">Sport</button><button class="chip" aria-pressed="false" data-fam="chaussures">Chaussures</button><button class="chip" aria-pressed="false" data-fam="accessoires">Accessoires</button>
+        </div>
+        <div class="search-wrap in">
+          <label class="sr-only" for="q-pieces">Rechercher une pièce</label><input class="search" id="q-pieces" type="search" placeholder="Rechercher une pièce">
+        </div>
+        <div id="index">
+          <div class="index-group">
+            <h3 class="index-family in">Hauts</h3>
+            <ul class="index-list">
+              
+                <li class="index-item in">
+                  <a href="#/vetement/tshirt">
+                    <span class="num">01</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M40 22 L52 18 Q60 27 68 18 L80 22 L100 36 L92 50 L84 45 L84 100 L36 100 L36 45 L28 50 L20 36 Z M50 19.5 Q60 32 70 19.5 M36 94 L84 94"></path><path class="illu-o" d="M30 47 L36 42 M90 47 L84 42"></path></svg>
+                    <span class="name">T-shirts</span>
+                    <span class="desc">La pièce de base. Le poids du tissu et la qualité du coton font toute la différence.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/polo">
+                    <span class="num">02</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M40 22 L52 18 L60 26 L68 18 L80 22 L100 36 L92 50 L84 45 L84 100 L36 100 L36 45 L28 50 L20 36 Z M52 18 L49 31 L60 26 L71 31 L68 18 M60 26 L60 46 M36 94 L84 94"></path><path class="illu-o" d="M60 32 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0 M60 40 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0"></path></svg>
+                    <span class="name">Polos</span>
+                    <span class="desc">Entre le t-shirt et la chemise. Le piqué de coton et la tenue du col sont essentiels.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/debardeur">
+                    <span class="num">03</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M44 14 L50 14 Q60 36 70 14 L76 14 Q77 34 88 42 L88 104 L32 104 L32 42 Q43 34 44 14 Z M47 15 Q60 41 73 15 M32 98 L88 98"></path><path class="illu-o" d="M38 44 Q34 40 34 36 M82 44 Q86 40 86 36"></path></svg>
+                    <span class="name">Débardeurs</span>
+                    <span class="desc">Pour la chaleur, le sport ou en sous-couche : douceur et maintien avant tout.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/chemise">
+                    <span class="num">04</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 20 L52 16 L60 24 L68 16 L78 20 L96 34 L104 88 L94 90 L84 50 L84 104 L36 104 L36 50 L26 90 L16 88 L24 34 Z M52 16 L54 29 L60 24 L66 29 L68 16 M60 24 L60 104 M17 82 L27 84 M93 84 L103 82 M66 40 L76 40 L76 51 L66 51 Z"></path><path class="illu-o" d="M60 36 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0 M60 50 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0 M60 64 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0 M60 78 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0 M60 92 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0"></path></svg>
+                    <span class="name">Chemises</span>
+                    <span class="desc">Le tissage (oxford, popeline, twill…) détermine le style et l'usage.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/surchemise">
+                    <span class="num">05</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M40 20 L52 15 L60 24 L68 15 L80 20 L98 34 L104 90 L94 92 L86 52 L86 104 L34 104 L34 52 L26 92 L16 90 L22 34 Z M52 15 L54 29 L60 24 L66 29 L68 15 M60 24 L60 104 M40 42 L54 42 L54 56 L40 56 Z M66 42 L80 42 L80 56 L66 56 Z M40 46 L54 46 M66 46 L80 46"></path><path class="illu-o" d="M47 49 m-1.3 0 a1.3 1.3 0 1 0 2.6 0 a1.3 1.3 0 1 0 -2.6 0 M73 49 m-1.3 0 a1.3 1.3 0 1 0 2.6 0 a1.3 1.3 0 1 0 -2.6 0 M60 40 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0 M60 60 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0 M60 80 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0"></path></svg>
+                    <span class="name">Surchemises</span>
+                    <span class="desc">À mi-chemin entre chemise et veste : un tissu épais qui protège sans encombrer.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/pull">
+                    <span class="num">06</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 20 Q60 30 78 20 L96 32 L104 92 L94 94 L84 52 L84 102 L36 102 L36 52 L26 94 L16 92 L24 32 Z M44 22 Q60 35 76 22 M36 94 L84 94 M17 86 L27 88 M93 88 L103 86"></path><path class="illu-o" d="M44 98 L44 94 M52 98 L52 94 M60 98 L60 94 M68 98 L68 94 M76 98 L76 94"></path></svg>
+                    <span class="name">Pulls &amp; cardigans</span>
+                    <span class="desc">La laine est reine. La pire erreur : l'acrylique qui bouloche et ne tient pas chaud.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/sweat">
+                    <span class="num">07</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M44 26 Q45 8 60 8 Q75 8 76 26 L96 36 L104 92 L94 94 L84 54 L84 102 L36 102 L36 54 L26 94 L16 92 L24 36 Z M50 26 Q60 40 70 26 M44 76 L76 76 L80 96 L40 96 Z M36 96 L84 96"></path><path class="illu-o" d="M56 33 L55 48 M64 33 L65 48"></path></svg>
+                    <span class="name">Sweats &amp; hoodies</span>
+                    <span class="desc">Le confort décontracté. Un bon sweat est en molleton épais et garde sa forme.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/blouse">
+                    <span class="num">08</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M44 20 L52 18 L60 38 L68 18 L76 20 Q96 25 99 46 L90 51 L84 46 L86 100 L34 100 L36 46 L30 51 L21 46 Q24 25 44 20 Z M34 94 L86 94 M24 44 Q28 40 30 36 M96 44 Q92 40 90 36"></path><path class="illu-o" d="M60 38 Q53 40 52 48 M60 38 Q67 40 68 48 M60 38 L56 52 M60 38 L64 52"></path></svg>
+                    <span class="name">Blouses &amp; tops</span>
+                    <span class="desc">Fluides et légers : les fibres naturelles et le lyocell surpassent largement le polyester.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+          <div class="index-group">
+            <h3 class="index-family in">Bas</h3>
+            <ul class="index-list">
+              
+                <li class="index-item in">
+                  <a href="#/vetement/jean">
+                    <span class="num">09</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M38 14 L82 14 L86 106 L66 106 L60 46 L54 106 L34 106 Z M38 22 L82 22 M62 22 Q62 40 58 46 M41 23 Q47 33 53 23 M67 23 Q73 33 79 23 M45 14 L45 22 M75 14 L75 22 M35 98 L54 98 M66 98 L85 98"></path><path class="illu-o" d="M41 25 m-1.2 0 a1.2 1.2 0 1 0 2.4 0 a1.2 1.2 0 1 0 -2.4 0 M79 25 m-1.2 0 a1.2 1.2 0 1 0 2.4 0 a1.2 1.2 0 1 0 -2.4 0 M60 18 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0"></path></svg>
+                    <span class="name">Jeans</span>
+                    <span class="desc">Un bon denim est en coton (presque) pur et se patine avec le temps.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/chino">
+                    <span class="num">10</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M38 14 L82 14 L85 106 L66 106 L60 46 L54 106 L35 106 Z M38 22 L82 22 M62 22 Q62 40 58 46 M40 23 L46 36 M80 23 L74 36 M47 50 L45 104 M73 50 L75 104"></path><path class="illu-o" d="M60 18 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0"></path></svg>
+                    <span class="name">Chinos</span>
+                    <span class="desc">Le pantalon de toile de coton : entre le jean et le pantalon habillé.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/pantalon">
+                    <span class="num">11</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M40 14 L80 14 L82 108 L65 108 L60 46 L55 108 L38 108 Z M40 22 L80 22 M62 22 Q62 40 58 46 M41 23 L46 34 M79 23 L74 34 M49 22 L50 32 M71 22 L70 32 M48 40 L46 106 M72 40 L74 106"></path><path class="illu-o" d="M60 18 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0"></path></svg>
+                    <span class="name">Pantalons habillés</span>
+                    <span class="desc">Laine pour l'élégance : elle tombe, respire et ne marque pas les plis.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/short">
+                    <span class="num">12</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M36 28 L84 28 L90 84 L65 88 L60 58 L55 88 L30 84 Z M36 36 L84 36 M62 36 Q62 52 58 58 M38 37 L44 50 M82 37 L76 50 M31 78 L55 82 M65 82 L89 78"></path><path class="illu-o" d="M60 32 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0"></path></svg>
+                    <span class="name">Shorts &amp; bermudas</span>
+                    <span class="desc">Pour l'été : légèreté, respirabilité et une coupe à la bonne longueur.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/jogging">
+                    <span class="num">13</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M40 14 L80 14 L82 96 L66 98 L60 44 L54 98 L38 96 Z M40 23 L80 23 M38 90 L54 91 M66 91 L82 90 M42 28 L44 44 M78 28 L76 44"></path><path class="illu-o" d="M58 23 Q56 32 53 36 M62 23 Q64 32 67 36"></path></svg>
+                    <span class="name">Joggings</span>
+                    <span class="desc">Le confort à la maison ou en ville : molleton épais pour durer, technique pour le sport.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+          <div class="index-group">
+            <h3 class="index-family in">Robes &amp; jupes</h3>
+            <ul class="index-list">
+              
+                <li class="index-item in">
+                  <a href="#/vetement/robe">
+                    <span class="num">14</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M48 14 L54 14 Q60 23 66 14 L72 14 L74 40 Q73 46 71 50 L92 106 L28 106 L49 50 Q47 46 46 40 Z M49 49 Q60 53 71 49 M60 53 L56 106 M60 53 L64 106"></path><path class="illu-o" d="M50 14 Q60 26 70 14"></path></svg>
+                    <span class="name">Robes</span>
+                    <span class="desc">Le tombé est tout : fibres naturelles et doublure respirante font la différence.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/jupe">
+                    <span class="num">15</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 28 L78 28 L92 98 L28 98 Z M42 36 L78 36 M52 36 L45 98 M60 36 L60 98 M68 36 L75 98"></path><path class="illu-o" d="M74 32 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0"></path></svg>
+                    <span class="name">Jupes</span>
+                    <span class="desc">Une jupe réussie tient sa forme : tissu dense pour les coupes droites, fluide pour les plissées.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+          <div class="index-group">
+            <h3 class="index-family in">Vestes &amp; manteaux</h3>
+            <ul class="index-list">
+              
+                <li class="index-item in">
+                  <a href="#/vetement/costume">
+                    <span class="num">16</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 18 L52 14 L60 52 L68 14 L78 18 L96 30 L102 92 L92 94 L84 50 L84 106 L36 106 L36 50 L28 94 L18 92 L24 30 Z M52 14 L49 31 L55 34 L60 52 M68 14 L71 31 L65 34 L60 52 M60 52 L60 106 M40 80 L52 80 M68 80 L80 80 M68 45 L78 43"></path><path class="illu-o" d="M57 20 L60 24 L63 20 Z M60 24 L57.5 44 L60 48 L62.5 44 Z M60 62 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0 M60 74 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0"></path></svg>
+                    <span class="name">Costumes &amp; blazers</span>
+                    <span class="desc">Laine vierge et entoilage : les deux critères essentiels d'une belle veste.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/manteau">
+                    <span class="num">17</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 14 L52 10 L60 40 L68 10 L78 14 L96 26 L102 96 L92 98 L86 46 L88 114 L32 114 L34 46 L28 98 L18 96 L24 26 Z M52 10 L47 27 L55 31 L60 40 M68 10 L73 27 L65 31 L60 40 M60 40 L64 114 M38 82 L50 80 M70 80 L82 82"></path><path class="illu-o" d="M54 52 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0 M68 52 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0 M54 66 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0 M68 66 m-1.6 0 a1.6 1.6 0 1 0 3.2 0 a1.6 1.6 0 1 0 -3.2 0"></path></svg>
+                    <span class="name">Manteaux en laine</span>
+                    <span class="desc">Un manteau doit contenir au moins 70 % de laine pour vraiment protéger du froid.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/trench">
+                    <span class="num">18</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 14 L52 10 L60 38 L68 10 L78 14 L96 26 L104 98 L94 100 L86 46 L90 114 L30 114 L34 46 L26 100 L16 98 L24 26 Z M52 10 L46 28 L56 32 L60 38 M68 10 L74 28 L64 32 L60 38 M60 38 L64 114 M33 66 L87 66 M33 72 L87 72 M28 28 L42 22 M92 28 L78 22"></path><path class="illu-o" d="M57 64 L64 64 L64 74 L57 74 Z M54 48 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0 M68 48 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0 M54 84 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0 M68 84 m-1.5 0 a1.5 1.5 0 1 0 3 0 a1.5 1.5 0 1 0 -3 0"></path></svg>
+                    <span class="name">Trenchs &amp; imperméables</span>
+                    <span class="desc">Contre la pluie : gabardine de coton pour l'élégance, membrane technique pour l'efficacité.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/doudoune">
+                    <span class="num">19</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M44 14 L76 14 L80 22 L98 34 L105 90 L92 93 L86 52 L86 102 L34 102 L34 52 L28 93 L15 90 L22 34 L40 22 Z M44 14 L44 24 M76 14 L76 24 M34 46 Q60 50 86 46 M34 60 Q60 64 86 60 M34 74 Q60 78 86 74 M34 88 Q60 92 86 88 M23 48 L30 50 M20 64 L29 66 M18 80 L28 82 M97 48 L90 50 M100 64 L91 66 M102 80 L92 82"></path><path class="illu-o" d="M60 14 L60 102"></path></svg>
+                    <span class="name">Doudounes</span>
+                    <span class="desc">Le pouvoir gonflant (fill power) compte plus que l'épaisseur.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/cuir">
+                    <span class="num">20</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 18 L52 14 L68 14 L78 18 L96 30 L102 88 L92 90 L84 50 L86 96 L34 96 L36 50 L28 90 L18 88 L24 30 Z M52 14 L43 31 L52 35 M68 14 L77 29 L67 34 M34 88 L86 88 M44 56 L52 50"></path><path class="illu-o" d="M66 15 L50 40 L56 96 M68 54 L79 46 M84 88 L88 88 L88 94 L84 94"></path></svg>
+                    <span class="name">Vestes en cuir</span>
+                    <span class="desc">Cuir pleine fleur ou rien : le simili craquelle en deux ans, le vrai cuir dure trente ans.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/blouson">
+                    <span class="num">21</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M44 18 Q60 24 76 18 L96 32 L102 86 L92 88 L84 52 L86 94 L34 94 L36 52 L28 88 L18 86 L24 32 Z M44 18 Q60 30 76 18 M36 86 L84 86 M19 80 L28 82 M92 82 L101 80 M84 38 L92 36 L94 46 L86 48 Z"></path><path class="illu-o" d="M60 25 L60 94 M88 40 L90 44"></path></svg>
+                    <span class="name">Blousons &amp; vestes casual</span>
+                    <span class="desc">Veste en jean, bomber, harrington, workwear : des pièces solides pour la mi-saison.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/polaire">
+                    <span class="num">22</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M46 12 L74 12 L76 22 L96 32 L104 92 L94 94 L84 52 L84 102 L36 102 L36 52 L26 94 L16 92 L24 32 L44 22 Z M44 22 Q60 27 76 22 M36 96 L84 96 M66 50 L78 50 L78 62 L66 62 Z"></path><path class="illu-o" d="M60 12 L60 46 M58 46 L62 46 L62 50 L58 50 Z"></path></svg>
+                    <span class="name">Polaires &amp; softshells</span>
+                    <span class="desc">Couches intermédiaires d'extérieur : chaleur légère et respirabilité.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+          <div class="index-group">
+            <h3 class="index-family in">Dessous &amp; nuit</h3>
+            <ul class="index-list">
+              
+                <li class="index-item in">
+                  <a href="#/vetement/calecon">
+                    <span class="num">23</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M30 30 L90 30 L94 82 L68 86 L60 64 L52 86 L26 82 Z M30 40 L90 40 M60 40 Q67 52 60 64 M27 76 L52 80 M68 80 L93 76"></path><path class="illu-o" d="M36 35 L84 35"></path></svg>
+                    <span class="name">Caleçons &amp; boxers</span>
+                    <span class="desc">Au contact de la peau : douceur, respirabilité et un élastique qui tient.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/lingerie">
+                    <span class="num">24</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g transform="translate(0 20)"><path class="illu-t" d="M20 58 L100 58 L100 67 L20 67 Z M24 58 Q27 34 46 32 Q57 39 60 58 M60 58 Q63 39 74 32 Q93 34 96 58 M44 32 L40 12 M76 32 L80 12"></path><path class="illu-o" d="M60 58 m-2 0 a2 2 0 1 0 4 0 a2 2 0 1 0 -4 0 M30 50 Q42 42 54 50 M66 50 Q78 42 90 50"></path></g></svg>
+                    <span class="name">Lingerie</span>
+                    <span class="desc">Soutiens-gorge et culottes : le maintien et la bonne taille avant le reste.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/chaussettes">
+                    <span class="num">25</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M46 10 L70 10 L70 62 L90 78 Q100 86 95 97 Q90 105 79 101 L48 89 Q39 85 43 75 L46 64 Z M46 18 L70 18 M46 22 L70 22"></path><path class="illu-o" d="M46 64 Q57 73 70 63 M82 80 Q92 86 89 101"></path></svg>
+                    <span class="name">Chaussettes &amp; collants</span>
+                    <span class="desc">Un renfort au talon et à la pointe, et une fibre adaptée à l'usage.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/pyjama">
+                    <span class="num">26</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 20 L52 16 L60 26 L68 16 L78 20 L96 34 L104 88 L94 90 L84 50 L84 104 L36 104 L36 50 L26 90 L16 88 L24 34 Z M52 16 L48 30 L56 32 L60 26 M68 16 L72 30 L64 32 L60 26 M60 26 L60 104 M66 42 L78 42 L78 54 L66 54 Z"></path><path class="illu-o" d="M17 82 L27 84 M93 84 L103 82 M66 45 L78 45 M60 38 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0 M60 56 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0 M60 74 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0"></path></svg>
+                    <span class="name">Pyjamas &amp; intérieur</span>
+                    <span class="desc">Pour bien dormir : une matière qui respire et régule la chaleur.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/maillot">
+                    <span class="num">27</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M44 14 L50 14 Q60 34 70 14 L76 14 Q81 40 72 56 Q75 74 88 84 L74 98 Q60 88 46 98 L32 84 Q45 74 48 56 Q39 40 44 14 Z"></path><path class="illu-o" d="M48 56 Q60 62 72 56"></path></svg>
+                    <span class="name">Maillots de bain</span>
+                    <span class="desc">Chlore, sel et soleil sont redoutables : il faut un tissu fait pour y résister.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+          <div class="index-group">
+            <h3 class="index-family in">Sport</h3>
+            <ul class="index-list">
+              
+                <li class="index-item in">
+                  <a href="#/vetement/sport">
+                    <span class="num">28</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M42 12 L78 12 L80 30 L76 106 L66 106 L60 44 L54 106 L44 106 L40 30 Z M42 21 L78 21 M44 100 L54 100 M66 100 L76 100"></path><path class="illu-o" d="M79 23 L74 104 M41 23 L46 104"></path></svg>
+                    <span class="name">Vêtements de sport</span>
+                    <span class="desc">Ici, le synthétique est votre allié : il évacue la sueur et sèche vite.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+          <div class="index-group">
+            <h3 class="index-family in">Chaussures</h3>
+            <ul class="index-list">
+              
+                <li class="index-item in">
+                  <a href="#/vetement/baskets">
+                    <span class="num">29</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M14 86 L16 64 Q20 56 34 54 L54 46 Q62 42 66 50 Q72 60 88 64 L102 68 Q109 72 107 82 L105 86 Z M14 79 L107 79 M16 64 Q14 56 22 56 M40 52 L44 58 M46 49 L50 56 M52 47 L56 54 M84 64 Q86 72 84 79"></path><path class="illu-o" d="M16 86 L106 86"></path></svg>
+                    <span class="name">Baskets</span>
+                    <span class="desc">Cuir véritable et semelle cousue : des baskets qui durent des années.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/running">
+                    <span class="num">30</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M14 82 L18 60 Q24 52 36 52 L56 44 Q64 40 68 48 Q74 58 90 62 L102 66 Q110 70 108 80 Z M12 82 Q14 92 26 92 L98 92 Q110 92 108 80 M44 50 L48 56 M50 47 L54 54 M56 45 L60 52 M20 72 Q50 66 70 74"></path><path class="illu-o" d="M24 86 L96 86"></path></svg>
+                    <span class="name">Chaussures de running</span>
+                    <span class="desc">Une chaussure de course se choisit pour votre pied et votre pratique, pas pour son look.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/ville">
+                    <span class="num">31</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M12 80 Q12 66 30 63 L52 60 Q60 52 70 56 Q86 62 101 66 Q110 70 108 78 L106 82 L14 82 Z M14 82 L14 88 L30 88 L30 82 M30 85 L106 85 M56 58 Q61 63 67 58 M90 64 Q95 72 92 81"></path><path class="illu-o" d="M60 60 L62 66 M64 59 L66 65"></path></svg>
+                    <span class="name">Chaussures de ville</span>
+                    <span class="desc">Richelieus, derbies, mocassins : le montage cousu permet de les garder vingt ans.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/boots">
+                    <span class="num">32</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M30 12 L58 12 L60 62 Q74 66 94 70 Q106 74 104 84 L102 88 L28 88 Z M28 88 L28 95 L45 95 L45 88 M45 92 L102 92 M38 26 Q46 40 38 54"></path><path class="illu-o" d="M30 14 Q25 8 29 3 L35 3 Q37 9 34 14"></path></svg>
+                    <span class="name">Boots &amp; bottes</span>
+                    <span class="desc">Cuir graissé, montage cousu, semelle crantée : des boots pour toutes les saisons froides.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/sandales">
+                    <span class="num">33</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M12 80 Q12 71 28 71 L98 69 Q111 69 111 78 L109 87 L15 87 Z M12 80 L110 79 M34 71 Q42 44 59 42 Q73 44 75 69 M81 69 Q86 51 97 53 Q102 60 102 69"></path><path class="illu-o" d="M56 38 L63 38 L63 46 L56 46 Z"></path></svg>
+                    <span class="name">Sandales &amp; espadrilles</span>
+                    <span class="desc">L'été aussi mérite de la qualité : semelle en liège, cuir ou corde de jute.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+          <div class="index-group">
+            <h3 class="index-family in">Accessoires</h3>
+            <ul class="index-list">
+              
+                <li class="index-item in">
+                  <a href="#/vetement/echarpe">
+                    <span class="num">34</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M30 70 Q30 28 60 28 Q90 28 90 70 Z M28 70 L92 70 L92 86 L28 86 Z M36 70 L36 86 M44 70 L44 86 M52 70 L52 86 M60 70 L60 86 M68 70 L68 86 M76 70 L76 86 M84 70 L84 86"></path><path class="illu-o" d="M60 20 m-8 0 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0"></path></svg>
+                    <span class="name">Écharpes, bonnets &amp; gants</span>
+                    <span class="desc">Contre le froid, rien ne vaut la laine, le cachemire et le cuir doublé.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/ceinture">
+                    <span class="num">35</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M10 54 L86 54 L86 66 L10 66 Q4 60 10 54 Z"></path><path class="illu-o" d="M86 50 L104 50 L104 70 L86 70 Z M86 60 L100 60 M22 60 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0 M32 60 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0 M42 60 m-1.4 0 a1.4 1.4 0 1 0 2.8 0 a1.4 1.4 0 1 0 -2.8 0"></path></svg>
+                    <span class="name">Ceintures</span>
+                    <span class="desc">Une seule couche de cuir épais vaut mieux que plusieurs couches collées.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/cravate">
+                    <span class="num">36</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M54 12 L66 12 L64 22 L56 22 Z M56 22 L64 22 L72 92 L60 106 L48 92 Z"></path><path class="illu-o" d="M52.5 54 L67 46 M51 72 L70 62 M49.5 90 L71 80"></path></svg>
+                    <span class="name">Cravates &amp; pochettes</span>
+                    <span class="desc">Soie lourde, entoilage en laine et finitions roulées à la main.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+                <li class="index-item in">
+                  <a href="#/vetement/sac">
+                    <span class="num">37</span>
+                    <svg class="illu illu-s" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path class="illu-t" d="M24 50 L96 50 L102 104 L18 104 Z M42 50 Q42 22 60 22 Q78 22 78 50 M24 50 L96 50 L92 70 Q60 80 28 70 Z"></path><path class="illu-o" d="M60 75 m-2.5 0 a2.5 2.5 0 1 0 5 0 a2.5 2.5 0 1 0 -5 0"></path></svg>
+                    <span class="name">Sacs &amp; maroquinerie</span>
+                    <span class="desc">Un sac se juge à son cuir, ses coutures et sa quincaillerie.</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+            </ul>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="trio" aria-labelledby="titre-trio">
+      <h2 id="titre-trio" class="sr-only">Explorer le guide</h2>
+      <a class="duo-card in" href="#/matieres">
+        <div class="label">Le guide</div>
+        <h3>Les <em>matières</em></h3>
+        <p>76 fibres, cuirs et étoffes décryptés : qualités, défauts, usages et entretien.</p>
+        <span class="link-u">Explorer</span>
+      </a>
+      <a class="duo-card in" href="#/maisons">
+        <div class="label">L'annuaire</div>
+        <h3>Les <em>maisons</em></h3>
+        <p>447 marques notées sur cinq critères : matières, confection, durabilité, prix et éthique.</p>
+        <span class="link-u">Consulter</span>
+      </a>
+      <a class="duo-card in" href="#/conseils">
+        <div class="label">Le savoir-faire</div>
+        <h3>L'art <em>d'acheter</em></h3>
+        <p>Les bons réflexes et un lexique simple pour comprendre les étiquettes et reconnaître la qualité.</p>
+        <span class="link-u">Lire</span>
+      </a>
+    </section>
+  </main>
   <dialog id="recherche" class="global-search" aria-labelledby="recherche-titre">
     <div class="gs-inner">
       <div class="gs-head">
@@ -77,6 +530,6 @@
   </footer>
 
   
-  <script src="site.min.js?v=63293b2fa3"></script>
+  <script src="site.min.js?v=dc74306ee3"></script>
 </body>
 </html>

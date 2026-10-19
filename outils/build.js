@@ -92,6 +92,15 @@ const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").rep
     };
   };
 
+  // Accueil réécrit avec son contenu pré-rendu (liste des pièces lisible sans JavaScript)
+  ecrire("index.html", page({
+    titre: "Bien Vêtu — Guide d'achat de vêtements : matières et meilleures marques",
+    description: "Quelles matières choisir pour chaque vêtement, et quelles marques acheter selon votre budget : tier lists, fiches de 450 maisons et guide de 76 matières.",
+    url: URL_SITE,
+    contenu: rendre("").contenu,
+    jsonld: { "@context": "https://schema.org", "@type": "WebSite", name: "Bien Vêtu", url: URL_SITE, inLanguage: "fr" }
+  }));
+
   const pages = [];
   const ajouter = (chemin, route, description, extra = {}) => {
     const r = rendre(route);

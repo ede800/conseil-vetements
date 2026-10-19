@@ -1111,3 +1111,20 @@ section[id] { scroll-margin-top: 100px; }
   .timeline .year { font-size: 1.1rem; }
   .sommaire { gap: 4px 18px; }
 }
+
+/* ---------- Illustrations des pièces ---------- */
+.illu { fill: none; display: block; }
+.illu-t { stroke: var(--ink); stroke-width: 1.3; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.illu-o { stroke: var(--gold-line); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.illu-l { width: clamp(120px, 18vw, 170px); height: auto; margin: 0 auto 8px; }
+.illu-l .illu-t, .illu-l .illu-o { stroke-width: 1.4; }
+.illu-s { width: 58px; height: 58px; transition: transform .5s var(--ease); }
+.illu-xs { display: inline-block; width: 30px; height: 30px; vertical-align: middle; margin: -6px 10px -4px 0; }
+.index-item a { grid-template-columns: 56px 64px 1fr 1.1fr 40px; }
+.index-item a:hover .illu-s { transform: translateY(-3px) rotate(-2deg); }
+.manifesto .illu-t { stroke: #ece5da; }
+@media (max-width: 760px) {
+  .index-item a { grid-template-columns: 34px 48px 1fr 24px; }
+  .illu-s { width: 46px; height: 46px; }
+}
+@media (prefers-reduced-motion: reduce) { .index-item a:hover .illu-s { transform: none; } }
